@@ -1,0 +1,7 @@
+package ufpb.project.rescsystem;
+
+import android.support.v4.app.Fragment;
+
+public class Frag1 extends Fragment {
+
+}

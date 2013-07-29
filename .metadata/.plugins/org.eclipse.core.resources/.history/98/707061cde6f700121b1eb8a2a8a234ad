@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >  
+  <item  
+    android:id="@+id/menu_new"  
+    android:showAsAction="always|withText"  
+    android:icon="@android:drawable/ic_menu_add"  
+    android:title="Novo"/>  
+  <item  
+    android:id="@+id/menu_edit"  
+    android:showAsAction="ifRoom|withText"  
+    android:icon="@android:drawable/ic_menu_edit"  
+    android:title="Editar"/>  
+  <item  
+    android:id="@+id/menu_listar"  
+    android:showAsAction="ifRoom"  
+    android:icon="@android:drawable/ic_menu_my_calendar"  
+    android:title="Listar Itens"/>  
+</menu> 

@@ -1,0 +1,28 @@
+package br.javamagazine.cadastro;
+
+import android.content.Context;
+
+/**
+ * Factory para o repositorio do carro
+ * 
+ * @author ricardo
+ * 
+ */
+public class RepositorioFactory {
+
+	private static RepositorioCarro repositorio;
+	private static Context context;
+	
+	public static RepositorioCarro getRepositorioCarro() {
+		if (repositorio == null) {
+			repositorio = new RepositorioCarroSQLite();
+		}
+		return repositorio;
+	}
+	
+	public static setContext(Context context) {
+		
+	}
+
+	
+}

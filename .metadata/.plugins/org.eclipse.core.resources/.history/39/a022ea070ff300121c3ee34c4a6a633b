@@ -1,0 +1,154 @@
+package br.javamagazine.cadastro;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+/**
+ * Implementacao SQLite
+ * 
+ * @author Leandro Henrique - 11111979
+ * 
+ */
+public class RepositorioCarroSQLite implements RepositorioCarro {
+
+	// Categoria do Log para filtrar na janela LogCat
+	private static final String CATEGORIA = "javamagazine";
+
+	// Depois de buscar os carros, armazena a lista em memória
+	private List<Carro> carros;
+
+	private SQLiteDatabase sqlDb;
+	private OpenHelper openHelp;
+
+	public RepositorioCarroSQLite(Context context) {
+		openHelp = new OpenHelper(context);
+	}
+
+	@Override
+	// Lista da web, e armazena a lista de carros em memória
+	public List<Carro> listarCarros() {
+
+		// List<Carro> lista = new ArrayList<Carro>();
+		carros = new ArrayList<Carro>();
+
+		String[] columns = new String[] { "_id", "nome", "placa", "ano" };
+
+		sqlDb = openHelp.getWritableDatabase();
+		Cursor c = sqlDb
+				.query("carros", columns, null, null, null, null, "_id");
+
+		c.moveToFirst();
+		while (!c.isAfterLast()) {
+			Carro carro = new Carro();
+			carro.setId(c.getLong(0));
+			carro.setNome(c.getString(1));
+			carro.setPlaca(c.getString(2));
+			carro.setAno(Integer.parseInt(c.getString(3)));
+
+			carros.add(carro);
+			c.moveToNext();
+		}
+
+		c.close();
+		sqlDb.close();
+		return carros;
+	}
+
+	@Override
+	public boolean salvar(Carro carro) {
+		ContentValues cv = new ContentValues();
+		sqlDb = openHelp.getWritableDatabase();
+
+		if (carro.getId() == null) {
+			// Um novo carro
+			cv.put("nome", carro.getNome());
+			cv.put("placa", carro.getPlaca());
+			cv.put("ano", carro.getAno());
+
+			sqlDb.insert("carros", null, cv);
+			return true;
+		}
+
+		// Atualiza o carro, ou insere um novo com o próximo id
+		map.put(carro.getId(), carro);
+
+		sqlDb.close();
+
+		return true;
+	}
+
+	@Override
+	public boolean deletar(Carro carro) {
+		sqlDb = openHelp.getWritableDatabase();
+		sqlDb.delete("carros", "_id = ?",
+				new String[] { String.valueOf(carro.getId()) });
+		Log.i(CATEGORIA, "ID apagado: " + carro.getId());
+
+		return true;
+	}
+
+	@Override
+	public Carro getCarro(Long id) {
+
+		Log.i(CATEGORIA, "BBBBBBBBBBBBBBBB getCarro");
+		if (carros != null) {
+			for (Carro carro : carros) {
+				if (carro.getId().equals(id)) {
+					return carro;
+				}
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public Carro buscarCarroPorNome(String nome) {
+		Log.i(CATEGORIA, "BBBBBBBBBBBBBBBBuscar carro por nome");
+		String[] columns = new String[] { "_id", "nome", "placa", "ano" };
+		String[] args = new String[] { nome };
+
+		sqlDb = openHelp.getWritableDatabase();
+		Cursor c = sqlDb.query("carros", columns, "nome like ?", args, null,
+				null, "nome");
+
+		Carro carro = new Carro();
+		carro.setId(c.getLong(0));
+		carro.setNome(c.getString(1));
+		carro.setPlaca(c.getString(2));
+		carro.setAno(Integer.parseInt(c.getString(3)));
+
+		c.close();
+		sqlDb.close();
+
+		return carro;
+	}
+
+	private static class OpenHelper extends SQLiteOpenHelper {
+
+		public OpenHelper(Context context) {
+			super(context, "curso_3", null, 1);
+		}
+
+		@Override
+		public void onCreate(SQLiteDatabase db) {
+			db.execSQL("create table carros (_id integer primary "
+					+ "key autoincrement, nome text not null, "
+					+ "placa text not null, ano text not null);");
+		}
+
+		@Override
+		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+			db.execSQL("DROP TABLE IF EXISTS carros");
+			Log.i(CATEGORIA, "onUpgrade");
+			onCreate(db);
+		}
+
+	}
+}

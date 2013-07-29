@@ -1,0 +1,26 @@
+package ufpb.project.rescsystem.fragments;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+public class Shelter extends Fragment {
+
+	@Override
+	public View onCreateView(LayoutInflater infltr, ViewGroup container,
+			Bundle savedState) {
+
+		TextView txt = new TextView(getActivity());
+		String saida = "Lista de abrigos disponíveis - João Pessoa\n\n" +
+    			"\t• Ginásio Ronaldão - Cristo\n" +
+    			"\t• 15º Batalhão de Infantaria Motorizada\n" +
+    			"\t• IFPB - Jaguaribe\n";
+		
+		txt.setText(saida);
+		return txt;
+	}
+	
+}

@@ -227,11 +227,11 @@ public class MainActivity extends FragmentActivity implements
                 break;
             }  
             dummyTextView.setText(saida);
+            dummyTextView.setBottom(R.id.action_settings);
             return rootView;
         }
     
 }
-		
 		 
 		  /*
 		   * Sets the on-click listener for the listviews when they are created.

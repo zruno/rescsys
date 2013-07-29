@@ -1,0 +1,39 @@
+
+<FrameLayout   
+  xmlns:android="http://schemas.android.com/apk/res/android"  
+  xmlns:tools="http://schemas.android.com/tools"  
+  android:id="@+id/FrameLayout1"  
+  android:layout_width="match_parent"  
+  android:layout_height="match_parent" >  
+  
+  <fragment  
+    android:id="@+id/fragmento1"  
+	android:name="ufpb.project.rescsystem.FragInstruction"
+    android:layout_width="match_parent"  
+    android:layout_height="match_parent" />  
+  
+  <fragment  
+    android:id="@+id/fragmento2"  
+    android:name="ufpb.project.rescsystem.Shelter"  
+    android:layout_width="match_parent"  
+    android:layout_height="match_parent" /> 
+    
+  <fragment  
+    android:id="@+id/fragmento3"  
+    android:name="ufpb.project.rescsystem.fragments.FragHospital"  
+    android:layout_width="match_parent"  
+    android:layout_height="match_parent" />
+  
+  <fragment  
+    android:id="@+id/fragmento4"  
+    andrufpb.project.rescsystem.fragments.FragRiskAreasgRiskAreas"  
+    android:layout_width="match_parent"  
+    android:layout_height="match_parent" />
+  
+  <fragment  
+    android:id="@+id/fragmento5"  
+    android:name="ufpb.project.rescsystem.FragEscapeRoute"  
+    android:layout_width="match_parent"  
+    android:layout_height="match_parent" />
+  
+</FrameLayout>  

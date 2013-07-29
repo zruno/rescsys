@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 5 elements to &apos;drawable-mdpi&apos;&#x0D;&#x0A;- Original project: &apos;Rescsys_v2&apos;&#x0D;&#x0A;- Destination element: &apos;drawable-mdpi&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     instrucoes.png&#x0D;&#x0A;     hospital_icon_1.png&#x0D;&#x0A;     fuga.png&#x0D;&#x0A;     abrigo.png&#x0D;&#x0A;     risco.png" description="Copy files" element1="res/drawable-mdpi/instrucoes.png" element2="res/drawable-mdpi/hospital_icon_1.png" element3="res/drawable-mdpi/fuga.png" element4="res/drawable-mdpi/abrigo.png" element5="res/drawable-mdpi/risco.png" files="5" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1375057485257" target="/RescSystem/res/drawable-mdpi" units="0" version="1.0"/>
+</session>
