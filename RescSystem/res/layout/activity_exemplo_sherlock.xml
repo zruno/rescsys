@@ -1,4 +1,5 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/FrameLayout1"
     android:layout_width="match_parent"
@@ -18,7 +19,7 @@
 
     <fragment
         android:id="@+id/fragmento3"
-        android:name="ufpb.project.rescsystem.fragments.Hospital"
+        android:name="ufpb.project.rescsystem.fragments.HospitalsFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
