@@ -7,16 +7,16 @@
     <ListView
         android:id="@id/android:list"
         android1:layout_width="match_parent"
-        android1:layout_height="wrap_content"
-        android1:layout_weight="1"
+        android1:layout_height="0px"
+        android:layout_weight="1"
     />
     
     <TextView 
         android1:id="@+id/textInfo"
         android1:layout_width="match_parent"
-        android1:layout_weight="2"
-        android1:layout_height="wrap_content"
-        android1:text="@string/hello_world"
+        android1:gravity="top"
+        android:layout_weight="2"
+        android1:layout_height="0px"
         />
     
 </LinearLayout>

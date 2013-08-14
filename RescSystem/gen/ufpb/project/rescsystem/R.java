@@ -1057,6 +1057,7 @@ containing a value of this type.
         public static final int abs__shareactionprovider_share_with_application=0x7f090007;
         public static final int action_settings=0x7f09000e;
         public static final int app_name=0x7f09000d;
+        public static final int big_text=0x7f090015;
         public static final int escape_route=0x7f090014;
         public static final int hello_world=0x7f09000f;
         public static final int hospitals=0x7f090012;

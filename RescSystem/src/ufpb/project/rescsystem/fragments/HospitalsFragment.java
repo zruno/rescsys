@@ -7,6 +7,7 @@ import ufpb.project.rescsystem.R;
 import ufpb.project.rescsystem.modules.Entity;
 import ufpb.project.rescsystem.modules.Hospital;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,7 @@ public class HospitalsFragment extends MyListFragment {
 	public void setTextView() {
 		TextView textInfo = (TextView) getActivity().findViewById(R.id.textInfo);
 		textInfo.setText(getData().get(0).toString());
+		textInfo.setGravity(Gravity.TOP);
 	}
 
 }

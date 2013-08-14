@@ -49,29 +49,22 @@ public class MainActivity extends SherlockFragmentActivity implements
 
 
 		ArrayList<Entity> data = new ArrayList<Entity>();
-		data.add(new Hospital("Hospital Exemplo", "+5508332004000", 
-				"Rua Avenida, Bairro Vizinhança, N 1000 - João Pessoa, Paraíba", true));
 		f3.setData(data);
-		f3.setTextView();
-
+				
 		data.add(new Hospital("Outro Hospital", "08340040040", 
-				"Em linguística, a noção de texto é ampla e ainda aberta" +
-				" a uma definição mais precisa. Grosso modo, pode ser entendido como manifestação" +
-				" linguística das ideias de um autor, que serão interpretadas pelo leitor de acordo" +
-				" com seus conhecimentos linguísticos e culturais. Seu tamanho é variável." +
-				" Conjunto de palavras e frases articuladas, escritas sobre qualquer suporte." +
-				"Obra escrita considerada na sua redação original e autêntica (por oposição a sumário," +
-				" tradução, notas, comentários, etc.)”2 .Um texto é uma ocorrência linguística, " +
-				"escrita ou falada de qualquer extensão, " +
-				"dotada de unidade sociocomunicativa, semântica e formal. É uma unidade de linguagem em uso", true));
-		f3.setData(data);
+				getString(R.string.big_text), true));
 		
-		data.add(new Hospital("Yet Another Hospital", "010001110", 
+		f3.setTextView();
+					
+		data.add(new Hospital("Another Hospital", "010001110", 
 				"St Avenue, Maynever, N 100 - Never, Neverland", true));
-		
-		data.add(new Hospital("Yet Another Hospital", "010001110", 
+		data.add(new Hospital("Hospital 3", "010001110", 
 				"St Avenue, Maynever, N 100 - Never, Neverland", true));
-		f3.setData(data);
+		data.add(new Hospital("Hospital 4", "010001110", 
+				"St Avenue, Maynever, N 100 - Never, Neverland", true));
+		data.add(new Hospital("Yet Another Hospital", "01aaa001110", 
+				"St Avenue, Maynever, N 100 - Never, Neverland", true));
+
 		f3.setListView(getBaseContext());
 		
 		getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
