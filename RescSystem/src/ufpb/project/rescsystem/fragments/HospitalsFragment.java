@@ -11,8 +11,10 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
 
 public class HospitalsFragment extends MyListFragment {
 	
@@ -23,10 +25,5 @@ public class HospitalsFragment extends MyListFragment {
 		return super.onCreateView(infltr, container, savedState);	
 	}
 	
-	public void setTextView() {
-		TextView textInfo = (TextView) getActivity().findViewById(R.id.textInfo);
-		textInfo.setText(getData().get(0).toString());
-		textInfo.setGravity(Gravity.TOP);
-	}
 
 }

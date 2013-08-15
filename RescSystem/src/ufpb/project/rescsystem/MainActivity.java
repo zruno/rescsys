@@ -53,19 +53,21 @@ public class MainActivity extends SherlockFragmentActivity implements
 				
 		data.add(new Hospital("Outro Hospital", "08340040040", 
 				getString(R.string.big_text), true));
-		
-		f3.setTextView();
 					
 		data.add(new Hospital("Another Hospital", "010001110", 
-				"St Avenue, Maynever, N 100 - Never, Neverland", true));
+				"111111111111111111111111111", true));
 		data.add(new Hospital("Hospital 3", "010001110", 
-				"St Avenue, Maynever, N 100 - Never, Neverland", true));
+				"22222222222222222222222222222222", true));
 		data.add(new Hospital("Hospital 4", "010001110", 
-				"St Avenue, Maynever, N 100 - Never, Neverland", true));
+				"33333333333333333333333333333333333", true));
 		data.add(new Hospital("Yet Another Hospital", "01aaa001110", 
 				"St Avenue, Maynever, N 100 - Never, Neverland", true));
 
 		f3.setListView(getBaseContext());
+		
+		f3.getListView().setOnItemClickListener(f3);
+		
+		f3.setTextView(0);
 		
 		getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
