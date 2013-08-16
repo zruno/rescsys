@@ -4,7 +4,7 @@ package ufpb.project.rescsystem.fragments;
 import java.util.ArrayList;
 
 import ufpb.project.rescsystem.R;
-import ufpb.project.rescsystem.modules.Entity;
+import ufpb.project.rescsystem.modules.Facility;
 import ufpb.project.rescsystem.modules.Hospital;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -22,8 +22,8 @@ public class HospitalsFragment extends MyListFragment {
 	public View onCreateView(LayoutInflater infltr, ViewGroup container,
 			Bundle savedState) {
 		
+		super.setLayoutId(R.layout.fragment_hospitais);
 		return super.onCreateView(infltr, container, savedState);	
 	}
 	
-
 }

@@ -3,7 +3,7 @@ package ufpb.project.rescsystem;
 import java.util.ArrayList;
 
 import ufpb.project.rescsystem.fragments.*;
-import ufpb.project.rescsystem.modules.Entity;
+import ufpb.project.rescsystem.modules.Facility;
 import ufpb.project.rescsystem.modules.Hospital;
 
 import android.os.Bundle;
@@ -18,11 +18,11 @@ public class MainActivity extends SherlockFragmentActivity implements
 		TabListener {
 
 	/* Fragments */
-	private Instruction f1;
-	private Shelter f2;
+	private InstructionsFragment f1;
+	private SheltersFragment f2;
 	private HospitalsFragment f3;
-	private RiskAreas f4;
-	private EscapeRoute f5;
+	private RiskAreasFragment f4;
+	private RoutesFragment f5;
 
 	String TAG = "rescsys";
 	
@@ -36,19 +36,20 @@ public class MainActivity extends SherlockFragmentActivity implements
 		setTheme(R.style.Theme_Sherlock_Light);
 		setContentView(R.layout.activity_exemplo_sherlock);
 
-		f1 = (Instruction) getSupportFragmentManager().findFragmentById(
-				R.id.fragmento1);
-		f2 = (Shelter) getSupportFragmentManager().findFragmentById(
-				R.id.fragmento2);
+
 		f3 = (HospitalsFragment) getSupportFragmentManager().findFragmentById(
 				R.id.fragmento3);
-		f4 = (RiskAreas) getSupportFragmentManager().findFragmentById(
+		f1 = (InstructionsFragment) getSupportFragmentManager().findFragmentById(
+				R.id.fragmento1);
+		f2 = (SheltersFragment) getSupportFragmentManager().findFragmentById(
+				R.id.fragmento2);
+		f4 = (RiskAreasFragment) getSupportFragmentManager().findFragmentById(
 				R.id.fragmento4);
-		f5 = (EscapeRoute) getSupportFragmentManager().findFragmentById(
+		f5 = (RoutesFragment) getSupportFragmentManager().findFragmentById(
 				R.id.fragmento5);
 
 
-		ArrayList<Entity> data = new ArrayList<Entity>();
+		ArrayList<Facility> data = new ArrayList<Facility>();
 		f3.setData(data);
 				
 		data.add(new Hospital("Outro Hospital", "08340040040", 
@@ -64,10 +65,9 @@ public class MainActivity extends SherlockFragmentActivity implements
 				"St Avenue, Maynever, N 100 - Never, Neverland", true));
 
 		f3.setListView(getBaseContext());
-		
 		f3.getListView().setOnItemClickListener(f3);
 		
-		f3.setTextView(0);
+		// f3.setTextView(0);
 		
 		getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 

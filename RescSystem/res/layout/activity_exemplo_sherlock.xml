@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/fragmento1"
-        android:name="ufpb.project.rescsystem.fragments.Instruction"
+        android:name="ufpb.project.rescsystem.fragments.InstructionsFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <fragment
         android:id="@+id/fragmento2"
-        android:name="ufpb.project.rescsystem.fragments.Shelter"
+        android:name="ufpb.project.rescsystem.fragments.SheltersFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -25,13 +25,13 @@
 
     <fragment
         android:id="@+id/fragmento4"
-        android:name="ufpb.project.rescsystem.fragments.RiskAreas"
+        android:name="ufpb.project.rescsystem.fragments.RiskAreasFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <fragment
         android:id="@+id/fragmento5"
-        android:name="ufpb.project.rescsystem.fragments.EscapeRoute"
+        android:name="ufpb.project.rescsystem.fragments.RoutesFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
