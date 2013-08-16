@@ -2,7 +2,6 @@ package ufpb.project.rescsystem.fragments;
 
 import java.util.ArrayList;
 
-import ufpb.project.rescsystem.R;
 import ufpb.project.rescsystem.modules.Facility;
 import android.content.Context;
 import android.os.Bundle;
@@ -13,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.TextView;
 
 public class MyListFragment extends ListFragment implements OnItemClickListener {
 
@@ -35,11 +33,6 @@ public class MyListFragment extends ListFragment implements OnItemClickListener 
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, 
 			android.R.layout.simple_list_item_1, getNames());
 		setListAdapter(adapter);
-	}
-	
-	public void setTextView(int selected) {
-		TextView textInfo = (TextView) getActivity().findViewById(R.id.textInfo);
-		textInfo.setText(getData().get(selected).toString());
 	}
 		
 	public void setData(ArrayList<Facility> data) {
@@ -63,7 +56,6 @@ public class MyListFragment extends ListFragment implements OnItemClickListener 
 
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-		setTextView(arg2);
 	}
 	
 }

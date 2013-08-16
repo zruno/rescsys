@@ -1,6 +1,6 @@
 package ufpb.project.rescsystem.modules;
 
-public abstract class Facility {
+public class Facility {
 	
 	private String name;
 	private String phone;
@@ -12,6 +12,7 @@ public abstract class Facility {
 	}
 	
 	public Facility(String name, String phone, String address, boolean available) {
+		this.name = name;
 		this.phone = phone;
 		this.address = address;
 		this.available = available;

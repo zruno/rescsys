@@ -958,21 +958,24 @@ containing a value of this type.
         public static final int abs__textButton=0x7f040013;
         public static final int abs__title=0x7f04001b;
         public static final int abs__up=0x7f04000b;
-        public static final int action_settings=0x7f04003d;
+        public static final int action_settings=0x7f040040;
         public static final int disableHome=0x7f040009;
         public static final int edit_query=0x7f040026;
+        public static final int event_instructions=0x7f04003a;
         public static final int fragmento1=0x7f040033;
         public static final int fragmento2=0x7f040034;
         public static final int fragmento3=0x7f040035;
         public static final int fragmento4=0x7f040036;
         public static final int fragmento5=0x7f040037;
+        public static final int general_instructions=0x7f040039;
         public static final int homeAsUp=0x7f040006;
         public static final int listMode=0x7f040002;
-        public static final int menu_edit=0x7f04003b;
-        public static final int menu_listar=0x7f04003c;
-        public static final int menu_new=0x7f04003a;
+        public static final int menu_edit=0x7f04003e;
+        public static final int menu_listar=0x7f04003f;
+        public static final int menu_new=0x7f04003d;
         public static final int normal=0x7f040001;
-        public static final int sheltersInfo=0x7f040039;
+        public static final int routesInfo=0x7f04003b;
+        public static final int sheltersInfo=0x7f04003c;
         public static final int showCustom=0x7f040008;
         public static final int showHome=0x7f040005;
         public static final int showTitle=0x7f040007;
@@ -1011,9 +1014,10 @@ containing a value of this type.
         public static final int fragment_hospitais=0x7f030017;
         public static final int fragment_instructions=0x7f030018;
         public static final int fragment_riskareas=0x7f030019;
-        public static final int fragment_shelters=0x7f03001a;
-        public static final int sherlock_spinner_dropdown_item=0x7f03001b;
-        public static final int sherlock_spinner_item=0x7f03001c;
+        public static final int fragment_routes=0x7f03001a;
+        public static final int fragment_shelters=0x7f03001b;
+        public static final int sherlock_spinner_dropdown_item=0x7f03001c;
+        public static final int sherlock_spinner_item=0x7f03001d;
     }
     public static final class menu {
         public static final int activity_exemplo_sherlock=0x7f0b0000;
@@ -1061,8 +1065,10 @@ containing a value of this type.
         public static final int abs__shareactionprovider_share_with_application=0x7f090007;
         public static final int action_settings=0x7f09000e;
         public static final int app_name=0x7f09000d;
-        public static final int big_text=0x7f090015;
+        public static final int big_text=0x7f090017;
         public static final int escape_route=0x7f090014;
+        public static final int event_instructions=0x7f090016;
+        public static final int general_instructions=0x7f090015;
         public static final int hello_world=0x7f09000f;
         public static final int hospitals=0x7f090012;
         public static final int instructions=0x7f090010;

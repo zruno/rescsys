@@ -4,6 +4,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
  
-    
-    
+	<TextView 
+	    android:id="@+id/general_instructions"
+	    android:text="@string/general_instructions"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    /> 
+	    
+   	<TextView 
+	    android:id="@+id/event_instructions"
+	    android:text="@string/event_instructions"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    /> 
+	
+	
 </LinearLayout>

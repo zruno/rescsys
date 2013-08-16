@@ -1,22 +1,16 @@
 package ufpb.project.rescsystem.fragments;
 
 
-import java.util.ArrayList;
-
 import ufpb.project.rescsystem.R;
-import ufpb.project.rescsystem.modules.Facility;
-import ufpb.project.rescsystem.modules.Hospital;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
-public class HospitalsFragment extends MyListFragment {
+public class HospitalsFragment extends MyListFragment implements OnItemClickListener {
 	
 	@Override
 	public View onCreateView(LayoutInflater infltr, ViewGroup container,
@@ -24,6 +18,16 @@ public class HospitalsFragment extends MyListFragment {
 		
 		super.setLayoutId(R.layout.fragment_hospitais);
 		return super.onCreateView(infltr, container, savedState);	
+	}
+	
+	@Override
+	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+		setTextView(arg2);
+	}
+	
+	public void setTextView(int selected) {
+		TextView textInfo = (TextView) getActivity().findViewById(R.id.textInfo);
+		textInfo.setText(getData().get(selected).toString());
 	}
 	
 }

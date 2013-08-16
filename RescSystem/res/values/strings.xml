@@ -8,9 +8,12 @@
     <string name="instructions">Instruções</string>
     <string name="shelters">Abrigos</string>
     <string name="hospitals">Hospitais</string>
-    <string name="risc_areas">A. Risco</string>
+    <string name="risc_areas">Áreas de Risco</string>
     <string name="escape_route">Fuga</string>
 
-    <string name="big_text">O dólar à vista renovou as máximas ante o real.</string>
+    <string name="general_instructions">Para abrigos..</string>
+    <string name="event_instructions">Num evento de..</string>
+    
+    <string name="big_text">O dólar à vista.</string>
     
 </resources>

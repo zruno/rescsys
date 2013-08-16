@@ -36,13 +36,12 @@ public class MainActivity extends SherlockFragmentActivity implements
 		setTheme(R.style.Theme_Sherlock_Light);
 		setContentView(R.layout.activity_exemplo_sherlock);
 
-
-		f3 = (HospitalsFragment) getSupportFragmentManager().findFragmentById(
-				R.id.fragmento3);
 		f1 = (InstructionsFragment) getSupportFragmentManager().findFragmentById(
 				R.id.fragmento1);
 		f2 = (SheltersFragment) getSupportFragmentManager().findFragmentById(
 				R.id.fragmento2);
+		f3 = (HospitalsFragment) getSupportFragmentManager().findFragmentById(
+				R.id.fragmento3);
 		f4 = (RiskAreasFragment) getSupportFragmentManager().findFragmentById(
 				R.id.fragmento4);
 		f5 = (RoutesFragment) getSupportFragmentManager().findFragmentById(
@@ -51,11 +50,17 @@ public class MainActivity extends SherlockFragmentActivity implements
 
 		ArrayList<Facility> data = new ArrayList<Facility>();
 		f3.setData(data);
-				
-		data.add(new Hospital("Outro Hospital", "08340040040", 
+
+		ArrayList<Facility> data2 = new ArrayList<Facility>();
+		f2.setData(data2);
+		
+		ArrayList<Facility> data3 = new ArrayList<Facility>();
+		f5.setData(data3);
+		
+		data2.add(new Hospital("Outro Hospital", "08340040040", 
 				getString(R.string.big_text), true));
 					
-		data.add(new Hospital("Another Hospital", "010001110", 
+		data3.add(new Hospital("Another Hospital", "010001110", 
 				"111111111111111111111111111", true));
 		data.add(new Hospital("Hospital 3", "010001110", 
 				"22222222222222222222222222222222", true));
@@ -63,11 +68,14 @@ public class MainActivity extends SherlockFragmentActivity implements
 				"33333333333333333333333333333333333", true));
 		data.add(new Hospital("Yet Another Hospital", "01aaa001110", 
 				"St Avenue, Maynever, N 100 - Never, Neverland", true));
-
+		
 		f3.setListView(getBaseContext());
 		f3.getListView().setOnItemClickListener(f3);
 		
-		// f3.setTextView(0);
+		f2.setListView(getBaseContext());
+		f2.getListView().setOnItemClickListener(f2);
+		
+		f5.setListView(getBaseContext());
 		
 		getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
