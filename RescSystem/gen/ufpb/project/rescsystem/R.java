@@ -1196,6 +1196,7 @@ containing a value of this type.
         /**  Label for the "Done" button on the far left of action mode toolbars. 
          */
         public static final int abs__action_mode_done=0x7f060018;
+        public static final int abs__activity_chooser_view_dialog_title_default=0x7f060022;
         /**  Title for a button to expand the list of activities in ActivityChooserView [CHAR LIMIT=25] 
          */
         public static final int abs__activity_chooser_view_see_all=0x7f060019;
@@ -1217,14 +1218,15 @@ containing a value of this type.
         /**  SearchView accessibility description for voice button [CHAR LIMIT=NONE] 
          */
         public static final int abs__searchview_description_voice=0x7f060021;
+        public static final int abs__share_action_provider_share_with=0x7f060023;
         /**  Description of the choose target button in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abs__shareactionprovider_share_with=0x7f06001b;
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abs__shareactionprovider_share_with_application=0x7f06001c;
-        public static final int action_settings=0x7f060023;
-        public static final int app_name=0x7f060022;
+        public static final int action_settings=0x7f060025;
+        public static final int app_name=0x7f060024;
         /**   Title for notification shown when GooglePlayServices needs to be
         enabled for a application to work. [CHAR LIMIT=70] 
          */
@@ -1248,7 +1250,7 @@ containing a value of this type.
         [CHAR LIMIT=70] 
          */
         public static final int auth_client_using_bad_version_title=0x7f06000f;
-        public static final int big_text=0x7f06002c;
+        public static final int big_text=0x7f06002e;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -1304,14 +1306,14 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f06000e;
-        public static final int escape_route=0x7f060029;
-        public static final int event_instructions=0x7f06002b;
-        public static final int general_instructions=0x7f06002a;
-        public static final int hello_world=0x7f060024;
-        public static final int hospitals=0x7f060027;
-        public static final int instructions=0x7f060025;
-        public static final int risc_areas=0x7f060028;
-        public static final int shelters=0x7f060026;
+        public static final int escape_route=0x7f06002b;
+        public static final int event_instructions=0x7f06002d;
+        public static final int general_instructions=0x7f06002c;
+        public static final int hello_world=0x7f060026;
+        public static final int hospitals=0x7f060029;
+        public static final int instructions=0x7f060027;
+        public static final int risc_areas=0x7f06002a;
+        public static final int shelters=0x7f060028;
     }
     public static final class style {
         /** 

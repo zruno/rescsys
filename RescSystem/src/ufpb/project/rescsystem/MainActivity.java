@@ -39,7 +39,7 @@ public class MainActivity extends SherlockFragmentActivity implements
 		setTheme(R.style.Theme_Sherlock_Light);
 		setContentView(R.layout.activity_exemplo_sherlock);
 
-		//GoogleMap map;
+		GoogleMap map;
 		//map = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
 		
 		f1 = (InstructionsFragment) getSupportFragmentManager().findFragmentById(
