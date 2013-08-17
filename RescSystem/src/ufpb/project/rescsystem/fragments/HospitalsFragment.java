@@ -1,6 +1,9 @@
 package ufpb.project.rescsystem.fragments;
 
 
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.SupportMapFragment;
+
 import ufpb.project.rescsystem.R;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,13 +13,19 @@ import android.widget.AdapterView;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
+
+
+
 public class HospitalsFragment extends MyListFragment implements OnItemClickListener {
 	
 	@Override
 	public View onCreateView(LayoutInflater infltr, ViewGroup container,
 			Bundle savedState) {
 		
+		GoogleMap map;
+		//map = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
 		super.setLayoutId(R.layout.fragment_hospitais);
+		
 		return super.onCreateView(infltr, container, savedState);	
 	}
 	

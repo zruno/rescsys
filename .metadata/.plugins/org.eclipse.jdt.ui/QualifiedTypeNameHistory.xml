@@ -4,7 +4,6 @@
 <fullyQualifiedTypeName name="br.com.android.rescsys_v2.R.drawable"/>
 <fullyQualifiedTypeName name="android.app.LauncherActivity.IconResizer"/>
 <fullyQualifiedTypeName name="android.renderscript.Font"/>
-<fullyQualifiedTypeName name="android.os.Bundle"/>
 <fullyQualifiedTypeName name="br.com.android.rescsys_v2.MainActivity.DummySectionFragment"/>
 <fullyQualifiedTypeName name="android.widget.ArrayAdapter"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -25,4 +24,8 @@
 <fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="android.app.Activity"/>
 <fullyQualifiedTypeName name="com.actionbarsherlock.app.SherlockActivity"/>
+<fullyQualifiedTypeName name="com.google.android.gms.maps.SupportMapFragment"/>
+<fullyQualifiedTypeName name="android.view.View"/>
+<fullyQualifiedTypeName name="android.os.Bundle"/>
+<fullyQualifiedTypeName name="com.google.android.gms.maps.GoogleMap"/>
 </qualifiedTypeNameHistroy>

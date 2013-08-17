@@ -13,10 +13,13 @@ import android.util.Log;
 import com.actionbarsherlock.app.*;
 import com.actionbarsherlock.app.ActionBar.*;
 import com.actionbarsherlock.view.Menu;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.SupportMapFragment;
 
 public class MainActivity extends SherlockFragmentActivity implements
 		TabListener {
 
+	
 	/* Fragments */
 	private InstructionsFragment f1;
 	private SheltersFragment f2;
@@ -29,13 +32,16 @@ public class MainActivity extends SherlockFragmentActivity implements
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		
 		Exception e = new Exception();
 		Log.d(TAG, "called", e);
 		
 		setTheme(R.style.Theme_Sherlock_Light);
 		setContentView(R.layout.activity_exemplo_sherlock);
 
+		//GoogleMap map;
+		//map = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
+		
 		f1 = (InstructionsFragment) getSupportFragmentManager().findFragmentById(
 				R.id.fragmento1);
 		f2 = (SheltersFragment) getSupportFragmentManager().findFragmentById(
