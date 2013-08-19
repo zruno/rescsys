@@ -21,22 +21,15 @@ import android.widget.AdapterView.OnItemClickListener;
 
 public class HospitalsFragment extends MyListFragment {
 
-	private GoogleMap mMap;
-	private SupportMapFragment mMapFragment;
-	
-	MapFragment mapFrag;
-	
 	@Override
 	public View onCreateView(LayoutInflater infltr, ViewGroup container,
 			Bundle savedState) {
 		
 		//ft.add(R.layout.fragment_hospitais, mapFrag);
 		//map = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
-		super.setLayoutId(R.layout.fragment_hospitais, R.id.mapHospitals);
-		
-		return super.onCreateView(infltr, container, savedState);	
-		//return infltr.inflate(R.layout.fragment_hospitais, container, true);
-	}
+			
+		return infltr.inflate(R.layout.fragment_hospitais, container, true);
+	
 	}
 	
 //	ublic void setTextView(int selected) {

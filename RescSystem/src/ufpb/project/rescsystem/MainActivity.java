@@ -23,7 +23,7 @@ public class MainActivity extends SherlockFragmentActivity implements
 	/* Fragments */
 	private InstructionsFragment f1;
 	private SheltersFragment f2;
-	private HospitalsFragment f3;
+	private MyListFragment f3;
 	private RiskAreasFragment f4;
 	private RoutesFragment f5;
 
@@ -46,7 +46,7 @@ public class MainActivity extends SherlockFragmentActivity implements
 				R.id.fragmento1);
 		f2 = (SheltersFragment) getSupportFragmentManager().findFragmentById(
 				R.id.fragmento2);
-		f3 = (HospitalsFragment) getSupportFragmentManager().findFragmentById(
+		f3 = (MyListFragment) getSupportFragmentManager().findFragmentById(
 				R.id.fragmento3);
 		f4 = (RiskAreasFragment) getSupportFragmentManager().findFragmentById(
 				R.id.fragmento4);

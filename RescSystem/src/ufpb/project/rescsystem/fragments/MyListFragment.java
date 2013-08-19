@@ -18,6 +18,7 @@ import ufpb.project.rescsystem.modules.Facility;
 import android.content.Context;
 import android.hardware.Camera.CameraInfo;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,23 +32,25 @@ public class MyListFragment extends ListFragment implements OnItemClickListener 
 	static final LatLng HAMBURG = new LatLng(53.558, 9.927);
 	
 	private ArrayList<Facility> data;
-	private int layoutId;
 	
-	public void setLayoutId(int layoutId) {
-		this.layoutId = layoutId;
-	}
-
 	@Override
 	public View onCreateView(LayoutInflater infltr, ViewGroup container,
 			Bundle savedState) {
-		View v = infltr.inflate(layoutId, container, true);
+		View v = infltr.inflate(R.layout.fragment_hospitais, container, true);
 		return v;
 	}
 	
 	public void onStart() {
 		super.onStart();
 		
-		SupportMapFragment map = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+//		SupportMapFragment map = (SupportMapFragment) 
+//				getFragmentManager().findFragmentById(R.id.map);
+		
+		SupportMapFragment map = SupportMapFragment.newInstance();
+		FragmentTransaction ft = getFragmentManager().beginTransaction();
+		ft.add(R.id.map, map);
+		ft.commit();
+		
 	}
 	
 	public void setListView(Context context) {
