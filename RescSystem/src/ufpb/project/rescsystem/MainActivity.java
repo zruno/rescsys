@@ -33,6 +33,9 @@ public class MainActivity extends SherlockFragmentActivity implements
 		
 		setTheme(R.style.Theme_Sherlock_Light);
 		setContentView(R.layout.activity_exemplo_sherlock);
+		
+		getActionBar().setDisplayShowHomeEnabled(false);
+        getActionBar().setDisplayShowTitleEnabled(false);
 
 		f1 = (InstructionsFragment) getSupportFragmentManager().findFragmentById(
 				R.id.fragmento1);
