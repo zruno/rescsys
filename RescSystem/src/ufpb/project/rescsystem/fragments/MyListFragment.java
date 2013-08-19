@@ -53,6 +53,7 @@ public class MyListFragment extends ListFragment implements OnItemClickListener 
 		
 		ArrayList<Facility> data = new ArrayList<Facility>();
 		setData(data);
+		data.add(new Facility("teste", "teste ad", "teste n", true));
 
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, 
 			android.R.layout.simple_list_item_1, getNames());

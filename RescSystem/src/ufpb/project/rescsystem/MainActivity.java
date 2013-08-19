@@ -46,7 +46,6 @@ public class MainActivity extends SherlockFragmentActivity implements
 		f5 = (RoutesFragment) getSupportFragmentManager().findFragmentById(
 				R.id.fragmento5);
 
-		ArrayList<Facility> data = new ArrayList<Facility>();
 		//f3.setData(data);
 
 //		f3.setListView(getBaseContext());

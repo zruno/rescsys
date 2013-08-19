@@ -22,13 +22,7 @@
         android:name="ufpb.project.rescsystem.fragments.MyListFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
-    <fragment
-        android:id="@+id/fragmento4"
-        android:name="ufpb.project.rescsystem.fragments.RiskAreasFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+    
     <fragment
         android:id="@+id/fragmento5"
         android:name="ufpb.project.rescsystem.fragments.RoutesFragment"
