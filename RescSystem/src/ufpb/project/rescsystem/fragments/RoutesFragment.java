@@ -12,9 +12,7 @@ public class RoutesFragment extends Fragment {
 	public View onCreateView(LayoutInflater infltr, ViewGroup container,
 			Bundle savedState) {
 		
-		//super.setLayoutId(R.layout.fragment_routes, R.id.mapRoutes);
-		//return onCreateView(infltr, container, savedState);
-		return infltr.inflate(R.layout.fragment_riskareas, container, true);
+		return infltr.inflate(R.layout.fragment_routes, container, true);
 	}
 	
 }

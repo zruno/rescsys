@@ -24,15 +24,12 @@ public class HospitalsFragment extends MyListFragment {
 	@Override
 	public View onCreateView(LayoutInflater infltr, ViewGroup container,
 			Bundle savedState) {
-		
-		//ft.add(R.layout.fragment_hospitais, mapFrag);
-		//map = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
 			
 		return infltr.inflate(R.layout.fragment_hospitais, container, true);
 	
 	}
 	
-//	ublic void setTextView(int selected) {
+//	public void setTextView(int selected) {
 //		TextView textInfo = (TextView) getActivity().findViewById(R.id.textInfo);
 //		textInfo.setText(getData().get(selected).toString());
 //	}

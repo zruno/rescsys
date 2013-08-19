@@ -18,13 +18,11 @@ import com.google.android.gms.maps.SupportMapFragment;
 
 public class MainActivity extends SherlockFragmentActivity implements
 		TabListener {
-
 	
 	/* Fragments */
 	private InstructionsFragment f1;
 	private SheltersFragment f2;
 	private MyListFragment f3;
-	private RiskAreasFragment f4;
 	private RoutesFragment f5;
 
 	String TAG = "rescsys";
@@ -33,56 +31,24 @@ public class MainActivity extends SherlockFragmentActivity implements
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		Exception e = new Exception();
-		Log.d(TAG, "called", e);
-		
 		setTheme(R.style.Theme_Sherlock_Light);
 		setContentView(R.layout.activity_exemplo_sherlock);
 
-		// GoogleMap map;
-		//map = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
-		
 		f1 = (InstructionsFragment) getSupportFragmentManager().findFragmentById(
 				R.id.fragmento1);
 		f2 = (SheltersFragment) getSupportFragmentManager().findFragmentById(
 				R.id.fragmento2);
 		f3 = (MyListFragment) getSupportFragmentManager().findFragmentById(
 				R.id.fragmento3);
-		f4 = (RiskAreasFragment) getSupportFragmentManager().findFragmentById(
-				R.id.fragmento4);
 		f5 = (RoutesFragment) getSupportFragmentManager().findFragmentById(
 				R.id.fragmento5);
 
-
 		ArrayList<Facility> data = new ArrayList<Facility>();
 		//f3.setData(data);
-//
-//		ArrayList<Facility> data2 = new ArrayList<Facility>();
-//		f2.setData(data2);
-//		
-//		ArrayList<Facility> data3 = new ArrayList<Facility>();
-//		f5.setData(data3);
-//		
-//		data2.add(new Hospital("Outro Hospital", "08340040040", 
-//				getString(R.string.big_text), true));
-//					
-//		data3.add(new Hospital("Another Hospital", "010001110", 
-//				"111111111111111111111111111", true));
-		data.add(new Hospital("Hospital 3", "010001110", 
-				"22222222222222222222222222222222", true));
-		data.add(new Hospital("Hospital 4", "010001110", 
-				"33333333333333333333333333333333333", true));
-		data.add(new Hospital("Yet Another Hospital", "01aaa001110", 
-				"St Avenue, Maynever, N 100 - Never, Neverland", true));
-//		
+
 //		f3.setListView(getBaseContext());
 //		f3.getListView().setOnItemClickListener(f3);
-//		
-//		f2.setListView(getBaseContext());
-//		f2.getListView().setOnItemClickListener(f2);
-//		
-//		f5.setListView(getBaseContext());
-//		
+
 		getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
 		Tab aba1 = getSupportActionBar().newTab().setText("Instrucoes")
@@ -94,16 +60,12 @@ public class MainActivity extends SherlockFragmentActivity implements
 		Tab aba3 = getSupportActionBar().newTab().setText("Hospitais")
 				.setTabListener(this).setIcon(R.drawable.hospitals);
 		
-		Tab aba4 = getSupportActionBar().newTab().setText("A. Risco")
-				.setTabListener(this).setIcon(R.drawable.escape_route);
-		
 		Tab aba5 = getSupportActionBar().newTab().setText("Fuga")
 				.setTabListener(this).setIcon(R.drawable.risc_areas);
 		
 		getSupportActionBar().addTab(aba1);
 		getSupportActionBar().addTab(aba2);
 		getSupportActionBar().addTab(aba3);
-		getSupportActionBar().addTab(aba4);
 		getSupportActionBar().addTab(aba5);
 		
 	}
@@ -120,16 +82,14 @@ public class MainActivity extends SherlockFragmentActivity implements
 
 		
 		if (tab.getPosition() == 0) {
-			ft.show(f1).hide(f2).hide(f3).hide(f4).hide(f5);
+			ft.show(f1).hide(f2).hide(f3).hide(f5);
 		}else if(tab.getPosition() == 1){
-			ft.hide(f1).show(f2).hide(f3).hide(f4).hide(f5);
+			ft.hide(f1).show(f2).hide(f3).hide(f5);
 		} else if(tab.getPosition() == 2){
-			ft.hide(f1).hide(f2).show(f3).hide(f4).hide(f5);
-		} else if(tab.getPosition() == 3){
-			ft.hide(f1).hide(f2).hide(f3).show(f4).hide(f5);
+			ft.hide(f1).hide(f2).show(f3).hide(f5);
 		} else {
-			ft.hide(f1).hide(f2).hide(f3).hide(f4).show(f5);
-		} 
+			ft.hide(f1).hide(f2).hide(f3).show(f5);
+		}
 	}
 
 	@Override

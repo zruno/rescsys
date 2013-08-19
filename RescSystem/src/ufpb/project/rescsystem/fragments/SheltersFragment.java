@@ -13,14 +13,10 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.TextView;
 
 public class SheltersFragment extends Fragment implements OnItemClickListener {
-
-	private MapView map;
 	
 	public View onCreateView(LayoutInflater infltr, ViewGroup container,
 			Bundle savedState) {
-		//super.setLayoutId(R.layout.fragment_shelters, R.id.mapShelters);
-		// return super.onCreateView(infltr, container, savedState);
-		return infltr.inflate(R.layout.fragment_riskareas, container, true);
+		return infltr.inflate(R.layout.fragment_shelters, container, true);
 
 	}
 	
