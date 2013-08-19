@@ -1115,6 +1115,7 @@ containing a value of this type.
         public static final int abs__title=0x7f05001f;
         public static final int abs__up=0x7f05000f;
         public static final int action_settings=0x7f050044;
+        public static final int container=0x7f05003c;
         public static final int disableHome=0x7f05000d;
         public static final int edit_query=0x7f05002a;
         public static final int event_instructions=0x7f05003e;
@@ -1127,7 +1128,6 @@ containing a value of this type.
         public static final int homeAsUp=0x7f05000a;
         public static final int hybrid=0x7f050004;
         public static final int listMode=0x7f050006;
-        public static final int map=0x7f05003c;
         public static final int mapRoutes=0x7f05003f;
         public static final int mapShelters=0x7f050040;
         public static final int menu_edit=0x7f050042;

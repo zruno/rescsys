@@ -43,12 +43,10 @@ public class MyListFragment extends ListFragment implements OnItemClickListener 
 	public void onStart() {
 		super.onStart();
 		
-//		SupportMapFragment map = (SupportMapFragment) 
-//				getFragmentManager().findFragmentById(R.id.map);
 		
 		SupportMapFragment map = SupportMapFragment.newInstance();
 		FragmentTransaction ft = getFragmentManager().beginTransaction();
-		ft.add(R.id.map, map);
+		ft.replace(R.id.container, map);
 		ft.commit();
 		
 	}
