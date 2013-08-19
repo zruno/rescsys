@@ -1,0 +1,13 @@
+[bruno]
+Uso de MapView descartado: Desempenho insuportavel.
+MapFragment: Funciona, mas a implementacao vai requerer trabalho, ja que
+estramos lidando com varios fragments. Pode ser que tenhamos que mudar o
+paradigma da UI pra facilitar as coisas (em respeito a Abas, Fragments na
+mesma tela, possivel Intent, etc)
+;
+Key API Google: Passar sua chave SHA1 para eu adicionar no meu console do
+Google, assim acho que poderemos utilizar a mesma key para o projeto.
+;
+Fragments aninhados + maps:
+http://stackoverflow.com/questions/13733299/initialize-mapfragment-programmatically-with-maps-api-v2
+...

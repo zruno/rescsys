@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="10"
+        android:minSdkVersion="11"
         android:targetSdkVersion="14" />
 
     <!-- Permissão para usar o Google Maps -->
@@ -32,7 +32,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"  >
         <activity
             android:name="ufpb.project.rescsystem.MainActivity"
             android:label="@string/app_name" 
@@ -48,7 +48,7 @@
         <!-- Key para utilizar serviços do Google (Ex: Google Maps) -->
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyAkyWrMIUxkwcuvPqsO1JdrJvqnTEloHyo" />
+            android:value="AIzaSyDpGnd_blsn-FJa4Uxq3X92eD2HrOs-FYs" />
     </application>
 
 </manifest>

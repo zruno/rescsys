@@ -1127,20 +1127,20 @@ containing a value of this type.
         public static final int homeAsUp=0x7f05000a;
         public static final int hybrid=0x7f050004;
         public static final int listMode=0x7f050006;
+        public static final int map=0x7f05003c;
+        public static final int mapRoutes=0x7f05003f;
+        public static final int mapShelters=0x7f050040;
         public static final int menu_edit=0x7f050042;
         public static final int menu_listar=0x7f050043;
         public static final int menu_new=0x7f050041;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
-        public static final int routesInfo=0x7f05003f;
         public static final int satellite=0x7f050002;
-        public static final int sheltersInfo=0x7f050040;
         public static final int showCustom=0x7f05000c;
         public static final int showHome=0x7f050009;
         public static final int showTitle=0x7f05000b;
         public static final int tabMode=0x7f050007;
         public static final int terrain=0x7f050003;
-        public static final int textInfo=0x7f05003c;
         public static final int useLogo=0x7f050008;
         public static final int wrap_content=0x7f050005;
     }

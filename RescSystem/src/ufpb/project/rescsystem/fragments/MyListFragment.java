@@ -2,8 +2,21 @@ package ufpb.project.rescsystem.fragments;
 
 import java.util.ArrayList;
 
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMapOptions;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+
+import ufpb.project.rescsystem.R;
 import ufpb.project.rescsystem.modules.Facility;
 import android.content.Context;
+import android.hardware.Camera.CameraInfo;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
@@ -15,10 +28,12 @@ import android.widget.ArrayAdapter;
 
 public class MyListFragment extends ListFragment implements OnItemClickListener {
 
+	static final LatLng HAMBURG = new LatLng(53.558, 9.927);
+	
 	private ArrayList<Facility> data;
 	private int layoutId;
 	
-	 public void setLayoutId(int layoutId) {
+	public void setLayoutId(int layoutId) {
 		this.layoutId = layoutId;
 	}
 
@@ -27,6 +42,12 @@ public class MyListFragment extends ListFragment implements OnItemClickListener 
 			Bundle savedState) {
 		View v = infltr.inflate(layoutId, container, true);
 		return v;
+	}
+	
+	public void onStart() {
+		super.onStart();
+		
+		SupportMapFragment map = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
 	}
 	
 	public void setListView(Context context) {

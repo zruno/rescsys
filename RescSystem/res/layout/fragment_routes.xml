@@ -11,12 +11,12 @@
         android:layout_weight="1"
     />
     
-    <TextView 
-        android1:id="@+id/routesInfo"
+    <com.google.android.gms.maps.MapView
+        android1:id="@+id/mapRoutes"
         android1:layout_width="match_parent"
-        android1:gravity="top"
         android:layout_weight="2"
         android1:layout_height="0px"
         />
+    
     
 </LinearLayout>
