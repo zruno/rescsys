@@ -32,7 +32,7 @@ public class MainActivity extends SherlockFragmentActivity implements
 		super.onCreate(savedInstanceState);
 		
 		setTheme(R.style.Theme_Sherlock_Light);
-		setContentView(R.layout.activity_exemplo_sherlock);
+		setContentView(R.layout.activity_main);
 		
 		getActionBar().setDisplayShowHomeEnabled(false);
         getActionBar().setDisplayShowTitleEnabled(false);
@@ -46,9 +46,6 @@ public class MainActivity extends SherlockFragmentActivity implements
 		f5 = (RoutesFragment) getSupportFragmentManager().findFragmentById(
 				R.id.fragmento5);
 
-		//f3.setData(data);
-
-//		f3.setListView(getBaseContext());
 //		f3.getListView().setOnItemClickListener(f3);
 
 		getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -69,7 +66,6 @@ public class MainActivity extends SherlockFragmentActivity implements
 		getSupportActionBar().addTab(aba2);
 		getSupportActionBar().addTab(aba3);
 		getSupportActionBar().addTab(aba5);
-		
 	}
 
 	@Override
@@ -82,7 +78,6 @@ public class MainActivity extends SherlockFragmentActivity implements
 	@Override
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {
 
-		
 		if (tab.getPosition() == 0) {
 			ft.show(f1).hide(f2).hide(f3).hide(f5);
 		}else if(tab.getPosition() == 1){

@@ -1,0 +1,28 @@
+# Arquitetura 1 #
+
+1 App: Localização do usuário
+1.1 Web DB: Filtrar recursos pela localização
+2 Web DB: Enviar recursos disponíveis
+2.1 App: Mostrar na lista recursos(locais) por prioridade
+2.1 App: (opcional) Mostrar markers dos locais no mapa
+3 User: Selecionar local na lista
+3.1 App: Centralizar marker
+3.1 App: (opcional) Mostrar rota
+
+Desvantagens: dificuldade de implementação (cruzar localidade com banco de dados), não se aproveita da Google Places API.
+
+
+# Arquitetura 2 #
+
+1 App: Localização do usuário
+1.1 App: Buscar recursos mais próximos com API Places
+2 App: Mostrar na lista resultados por prioridade
+2.1 App: (opcional) Mostrar markers dos locais no mapa
+3 User: Selecionar local na lista
+3.1 App: Centralizar marker
+3.1 App: (opcional) Mostrar rota
+
+Desvantagens: não suportaria abrigos (talvez possam ser adicionados manualmente como markers, requer BD)
+
+
+Comentários: A1 condiz com proposta original do app, A2 tornaria o aplicativo utilizável desde já.
