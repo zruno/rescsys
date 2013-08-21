@@ -41,9 +41,9 @@ public class GMapFragment extends SupportMapFragment {
 	
 	private String searchStr;
 	
-	public GMapFragment() {
-		super();
-	}
+//	public GMapFragment() {
+//		super();
+//	}
 	
 	public static GMapFragment gMapInstance() {
 		return new GMapFragment();
@@ -55,10 +55,6 @@ public class GMapFragment extends SupportMapFragment {
 		setPlacesMarkers(new Marker[MAX_PLACES]);
 		locMan = (LocationManager) 
 				getActivity().getSystemService(Context.LOCATION_SERVICE);
-
-		
-		//new GetPlaces().execute(searchStr);
-		
 	}
 	
 	public void onResume() {
@@ -66,10 +62,9 @@ public class GMapFragment extends SupportMapFragment {
 		gmap = getMap();
 		
 		Location lastLoc = locMan.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-		System.err.println("passei");
+		
 		double lat = lastLoc.getLatitude();
 		double lng = lastLoc.getLongitude();
-		System.out.println("lat lng: "+lat +lng);
 				
 		LatLng lastLatLng = new LatLng(lat, lng);
 		userMarker = gmap.addMarker(new MarkerOptions()
@@ -77,14 +72,18 @@ public class GMapFragment extends SupportMapFragment {
 	    .title("You are here")
 	    .snippet("Your last recorded location"));
 		
-		gmap.animateCamera(CameraUpdateFactory.newLatLng(lastLatLng), 3000, null);
+		String placesSearchStr = "https://maps.googleapis.com/maps/api/place/nearbysearch/" +
+			    "json?location="+lat+","+lng+
+			    "&radius=10000&sensor=true" +
+			    "&types=hospital"+
+			    "&key=AIzaSyCxntrIHVBoFo_Ndv56cVxyqaxqPDb3CXU";
+		
+		new GetPlaces().execute(placesSearchStr);
+		
+		gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(lastLatLng, 13), 300, null);
 
 	}
 	
-	public Marker[] getPlacesMarkers() {
-		return placesMarkers;
-	}
-
 	public void setPlacesMarkers(Marker[] placesMarkers) {
 		this.placesMarkers = placesMarkers;
 	}
@@ -93,7 +92,7 @@ public class GMapFragment extends SupportMapFragment {
 
 		@Override
 		protected String doInBackground(String... placesURL) {
-			
+
 			//build result as string
 			StringBuilder placesBuilder = new StringBuilder();
 			//process search parameter string(s)
@@ -134,6 +133,7 @@ public class GMapFragment extends SupportMapFragment {
 		
 		protected void onPostExecute(String result) {
 		
+			System.err.println(result +" thistheresult");
 			try {
 				JSONObject resultObject = new JSONObject(result);
 				JSONArray placesArray = resultObject.getJSONArray("results");
