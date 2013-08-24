@@ -51,20 +51,10 @@ public class MyListFragment extends ListFragment
 	}
 	
 	public void onResume() {
-
-		data = map.getPlaces();
-		setListView();
 		super.onResume();
 	}
 	
 	public void setListView() {
-		System.out.println(data.size() +"zeca-1");
-		for (Facility f: data) System.out.println(f +"defron");
-		//ArrayList<Facility> data = new ArrayList<Facility>();
-//		data.add(new Facility("Hospital Universitário Lauro Wanderley, João Pessoa - Paraiba",
-//				"(83) 3216-7042", "Campus Universitário 1 Cidade Universitária, " 
-//						+"João Pessoa - PB 58050-000", true));
-		String[] array = {"sad", "news"};
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(
 				getActivity().getBaseContext(), android.R.layout.simple_list_item_1,
 				getNames());
@@ -97,6 +87,7 @@ public class MyListFragment extends ListFragment
 
 	@Override
 	public void onMapReady() {
+		data = map.getPlaces();
 		setListView();
 		
 	}
