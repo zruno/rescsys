@@ -2,15 +2,11 @@ package ufpb.project.rescsystem.fragments;
 
 import java.util.ArrayList;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 
 import ufpb.project.rescsystem.R;
 import ufpb.project.rescsystem.modules.Facility;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
@@ -23,7 +19,7 @@ import android.widget.ArrayAdapter;
 public class MyListFragment extends ListFragment implements OnItemClickListener {
 
 	static final LatLng HAMBURG = new LatLng(53.558, 9.927);
-	private SupportMapFragment map;
+	private GMapFragment map;
 	private ArrayList<Facility> data;
 	
 	public interface mapReadyListener {
@@ -46,29 +42,27 @@ public class MyListFragment extends ListFragment implements OnItemClickListener 
 		FragmentTransaction ft = getFragmentManager().beginTransaction();
 		ft.replace(R.id.container, map);
 		ft.commit();
-		
-		setListView();
+	}
+	
+	public void onStart() {
+		super.onStart();
 	}
 	
 	public void onResume() {
+
+		data = map.getPlaces();
+		setListView();
 		super.onResume();
-		// GoogleMap gmap = map.getMap();
-		//gmap.moveCamera(CameraUpdateFactory.newLatLngZoom(HAMBURG, 15));
-		
-		
 	}
 	
 	public void setListView() {
-		
-		ArrayList<Facility> data = new ArrayList<Facility>();
-		setData(data);
-		data.add(new Facility("Hospital Universitário Lauro Wanderley, João Pessoa - Paraiba",
-				"(83) 3216-7042", "Campus Universitário 1 Cidade Universitária, " 
-						+"João Pessoa - PB 58050-000", true));
-		data.add(new Facility("Hospital 2", "55 83 0800", "Rua Avenida", true));
-		data.add(new Facility("Hospital 3", "55 83 0800", "Rua Avenida", true));
-		data.add(new Facility("Hospital 4", "55 83 0800", "Rua Avenida", true));
-
+		System.out.println(data.size() +"zeca-1");
+		for (Facility f: data) System.out.println(f +"defron");
+		//ArrayList<Facility> data = new ArrayList<Facility>();
+//		data.add(new Facility("Hospital Universitário Lauro Wanderley, João Pessoa - Paraiba",
+//				"(83) 3216-7042", "Campus Universitário 1 Cidade Universitária, " 
+//						+"João Pessoa - PB 58050-000", true));
+		String[] array = {"sad", "news"};
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(
 				getActivity().getBaseContext(), android.R.layout.simple_list_item_1,
 				getNames());
@@ -86,9 +80,9 @@ public class MyListFragment extends ListFragment implements OnItemClickListener 
 	private String[] getNames() {
 		String[] names = new String[data.size()];
 		int i = 0;
-		ArrayList<Facility> newData = data;
-		for (Facility a: newData) {
+		for (Facility a: data) {
 			names[i] = a.getName();
+			System.out.println(a.getName() +"zeca");
 			i++;
 		}
 		return names;

@@ -1,8 +1,12 @@
 package ufpb.project.rescsystem.fragments;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -14,14 +18,22 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import ufpb.project.rescsystem.R;
+import ufpb.project.rescsystem.modules.Facility;
+import utils.ImageUtils;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.AsyncTask;
@@ -36,20 +48,26 @@ public class GMapFragment extends SupportMapFragment {
 	
 	private Marker[] placesMarkers;
 	private final int MAX_PLACES = 20;
-	
-	private MarkerOptions[] places;
-	
-	private String searchStr;
-	
-//	public GMapFragment() {
-//		super();
-//	}
+	private MarkerOptions[] placesOptions;
+	private ArrayList<Facility> places;
 	
 	public static GMapFragment gMapInstance() {
-		return new GMapFragment();
+		GMapFragment f =  new GMapFragment();
+		
+		return f;
+	}
+	
+	public ArrayList<Facility> getPlaces() {
+		return places;
+	}
+	
+	private void updateUI() {
+		
 	}
 	
 	public void onCreate(Bundle savedInstanceState) {
+		
+		places = new ArrayList<Facility>();
 		super.onCreate(savedInstanceState);
 		
 		setPlacesMarkers(new Marker[MAX_PLACES]);
@@ -133,11 +151,10 @@ public class GMapFragment extends SupportMapFragment {
 		
 		protected void onPostExecute(String result) {
 		
-			System.err.println(result +" thistheresult");
 			try {
 				JSONObject resultObject = new JSONObject(result);
 				JSONArray placesArray = resultObject.getJSONArray("results");
-				places = new MarkerOptions[placesArray.length()];
+				placesOptions = new MarkerOptions[placesArray.length()];
 				placesMarkers = new Marker[MAX_PLACES];
 				
 				for (int p=0; p<placesArray.length(); p++) {
@@ -145,6 +162,7 @@ public class GMapFragment extends SupportMapFragment {
 					LatLng placeLL=null;
 					String placeName="";
 					String vicinity="";
+					String iconUrl = "";
 					
 					try {
 						JSONObject placeObject = placesArray.getJSONObject(p);
@@ -161,25 +179,33 @@ public class GMapFragment extends SupportMapFragment {
 					    missingValue=true;
 					    jse.printStackTrace();
 					}
-					if (missingValue) places[p]=null;
-					else
-					    places[p]=new MarkerOptions()
+					if (missingValue) placesOptions[p]=null;
+					else {
+						
+						Facility f = new Facility(placeName, "999", vicinity, true);
+						places.add(f);
+						BitmapDescriptor icon = BitmapDescriptorFactory.
+								fromResource(R.drawable.hospital_marker_icon);
+						placesOptions[p]=new MarkerOptions()
 					    .position(placeLL)
 					    .title(placeName)
+					    .icon(icon)
 					    .snippet(vicinity);
+					}
 				}
 				
 			}
 			catch (Exception e) {
 			    e.printStackTrace();
 			}
-			if (places!=null && placesMarkers!=null){
-			    for(int p=0; p<places.length && p<placesMarkers.length; p++){
+			if (placesOptions!=null && placesMarkers!=null){
+			    for(int p=0; p<placesOptions.length && p<placesMarkers.length; p++){
 			        // will be null if a value was missing
-			        if (places[p]!=null)
-			            placesMarkers[p]=gmap.addMarker(places[p]);
+			        if (placesOptions[p]!=null)
+			            placesMarkers[p]=gmap.addMarker(placesOptions[p]);
 			    }
 			}
+			updateUI();
 		}
 	}
 

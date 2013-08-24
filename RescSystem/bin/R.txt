@@ -292,11 +292,12 @@ int drawable common_signin_btn_text_normal_light 0x7f020085
 int drawable common_signin_btn_text_pressed_dark 0x7f020086
 int drawable common_signin_btn_text_pressed_light 0x7f020087
 int drawable escape_route 0x7f020088
-int drawable hospitals 0x7f020089
-int drawable ic_launcher 0x7f02008a
-int drawable instructions 0x7f02008b
-int drawable risc_areas 0x7f02008c
-int drawable shelters 0x7f02008d
+int drawable hospital_marker_icon 0x7f020089
+int drawable hospitals 0x7f02008a
+int drawable ic_launcher 0x7f02008b
+int drawable instructions 0x7f02008c
+int drawable risc_areas 0x7f02008d
+int drawable shelters 0x7f02008e
 int id FrameLayout1 0x7f050036
 int id abs__action_bar 0x7f050024
 int id abs__action_bar_container 0x7f050023

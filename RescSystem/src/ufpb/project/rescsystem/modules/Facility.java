@@ -51,7 +51,7 @@ public class Facility {
 	}
 	
 	public String toString() {
-		return getPhone() +"\n" +getAddress(); 
+		return getPhone() +"\n" +getAddress() +"\n" +getName(); 
 		// Resources.getSystem().getString(R.string.app_name);
 	}
 	

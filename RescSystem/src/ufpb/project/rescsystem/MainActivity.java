@@ -83,6 +83,7 @@ public class MainActivity extends SherlockFragmentActivity implements
 		}else if(tab.getPosition() == 1){
 			ft.hide(f1).show(f2).hide(f3).hide(f5);
 		} else if(tab.getPosition() == 2){
+			f3.setListView();
 			ft.hide(f1).hide(f2).show(f3).hide(f5);
 		} else {
 			ft.hide(f1).hide(f2).hide(f3).show(f5);

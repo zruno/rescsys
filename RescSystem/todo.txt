@@ -3,6 +3,7 @@
 Funcionalidades
 - Localização do usuário
 - Embutir mapas no app (plano B: Intent para Google Maps)
+- Checar se há conectivade (durante as tarefas no geral)
 
 Back-end
 - Criar uma base de dados simples (SQLite? Arquivo?)
@@ -15,3 +16,9 @@ UI
 - Só ícones na action bar (nomes fora)
 - Deixar ícones na action bar e não no dropdown menu na v4.0
 - Remover ícones inúteis na v4.0 (editar, novo)
+
+
+#Baixa
+
+Mudar paradigma de uso dos Fragments, de show/hide para transitions e criar
+somente quando for utilizar (desempenho)
