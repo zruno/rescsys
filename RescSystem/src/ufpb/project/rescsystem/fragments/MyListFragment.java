@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.google.android.gms.maps.model.LatLng;
 
 import ufpb.project.rescsystem.R;
+import ufpb.project.rescsystem.fragments.GMapFragment.MapListener;
 import ufpb.project.rescsystem.modules.Facility;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
@@ -16,7 +17,8 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 
-public class MyListFragment extends ListFragment implements OnItemClickListener {
+public class MyListFragment extends ListFragment 
+			implements OnItemClickListener, MapListener {
 
 	static final LatLng HAMBURG = new LatLng(53.558, 9.927);
 	private GMapFragment map;
@@ -37,7 +39,7 @@ public class MyListFragment extends ListFragment implements OnItemClickListener 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		map = GMapFragment.gMapInstance();
+		map = GMapFragment.gMapInstance(this);
 		
 		FragmentTransaction ft = getFragmentManager().beginTransaction();
 		ft.replace(R.id.container, map);
@@ -90,6 +92,12 @@ public class MyListFragment extends ListFragment implements OnItemClickListener 
 
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+		
+	}
+
+	@Override
+	public void onMapReady() {
+		setListView();
 		
 	}
 	

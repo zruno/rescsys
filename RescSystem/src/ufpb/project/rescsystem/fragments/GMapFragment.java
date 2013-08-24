@@ -38,22 +38,29 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 
 public class GMapFragment extends SupportMapFragment {
 	
 	private GoogleMap gmap;
 	private LocationManager locMan;
 	
+	@SuppressWarnings("unused") // it will be, smartass
 	private Marker userMarker;
 	
 	private Marker[] placesMarkers;
 	private final int MAX_PLACES = 20;
 	private MarkerOptions[] placesOptions;
 	private ArrayList<Facility> places;
+	private MapListener parentFragment;
 	
-	public static GMapFragment gMapInstance() {
+	public interface MapListener {
+		public void onMapReady();
+	}
+	
+	public static GMapFragment gMapInstance(Fragment pf) {
 		GMapFragment f =  new GMapFragment();
-		
+		f.parentFragment = (MapListener) pf;
 		return f;
 	}
 	
@@ -62,7 +69,6 @@ public class GMapFragment extends SupportMapFragment {
 	}
 	
 	private void updateUI() {
-		
 	}
 	
 	public void onCreate(Bundle savedInstanceState) {
@@ -205,7 +211,7 @@ public class GMapFragment extends SupportMapFragment {
 			            placesMarkers[p]=gmap.addMarker(placesOptions[p]);
 			    }
 			}
-			updateUI();
+			parentFragment.onMapReady();
 		}
 	}
 
