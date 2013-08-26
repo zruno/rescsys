@@ -17,10 +17,10 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 
-public class MyListFragment extends ListFragment 
-			implements MapListener {
+public class MyListFragment2 extends ListFragment 
+			implements ufpb.project.rescsystem.fragments.GMapFragment2.MapListener {
 
-	private GMapFragment map;
+	private GMapFragment2 map;
 	private ArrayList<Facility> data;
 	private int fragmentId;
 	private int mapContainerId;
@@ -40,16 +40,25 @@ public class MyListFragment extends ListFragment
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		map = GMapFragment.gMapInstance(this);
+		map = GMapFragment2.gMapInstance(this);
+		
+		data = new ArrayList<Facility>();
+		data.add(new Facility("Abrigo1", "Rua 1", "9999", true,
+				new LatLng(-7.132298, -34.886339)));
+		data.add(new Facility("Abrigo2", "Rua 2", "9998", true,
+				new LatLng(-7.159040, -34.881961)));
+		data.add(new Facility("Abrigo3", "Rua 3", "9998", true,
+				new LatLng(-7.216691, -34.876125)));
 		
 		FragmentTransaction ft = getFragmentManager().beginTransaction();
 		ft.replace(mapContainerId, map);
 		ft.commit();
+		
 	}
 	
 	public void onStart() {
 		super.onStart();
-
+		
 		getListView().setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 				map.setHighlightedMarker(arg2);
@@ -89,7 +98,7 @@ public class MyListFragment extends ListFragment
 
 	@Override
 	public void onMapReady() {
-		data = map.getPlaces();
+		map.addMarkers(data);
 		setListView();
 	}
 	

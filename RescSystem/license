@@ -1,0 +1,9 @@
+Google Maps:
+
+(c) No Navigation, Autonomous Vehicle Control, or Enterprise Applications. You must not use the Service or Content with any products, systems, or applications for or in connection with any of the following:
+
+(i) real time navigation or route guidance, including but not limited to turn-by-turn route guidance that is synchronized to the position of a user's sensor-enabled device.
+
+(ii) any systems or functions for automatic or autonomous control of vehicle behavior; or
+
+(iii) enterprise dispatch, fleet management, business asset tracking or similar applications. If you want to engage in enterprise dispatch, fleet management, business asset tracking, or similar applications, please contact the Google Maps API for Business sales team to obtain a Google enterprise license. (If you are offering a non-enterprise implementation, you may use the Google Maps API(s) to track assets such as cars, buses or other vehicles, as long as your tracking application is made available to the public without charge. For example, you may offer a free, public Maps API Implementation that displays real-time public transit or other transportation status information.)

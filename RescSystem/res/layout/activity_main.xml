@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/fragmento3"
-        android:name="ufpb.project.rescsystem.fragments.MyListFragment"
+        android:name="ufpb.project.rescsystem.fragments.HospitalsFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
     

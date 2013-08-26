@@ -24,5 +24,21 @@ Desvantagens: dificuldade de implementação (cruzar localidade com banco de dad
 
 Desvantagens: não suportaria abrigos (talvez possam ser adicionados manualmente como markers, requer BD)
 
-
 Comentários: A1 condiz com proposta original do app, A2 tornaria o aplicativo utilizável desde já.
+
+Fazer: Por enquanto usar A2 pra o Hospital (fazendo), e A1 para abrigos
+_____________________________________________
+
+Arquitetura Servidor
+
+1. Centro de distribuiçao de informaçoes (nao é necessario implementar por enquanto)
+2. Servidor
+3. Clientes
+
+BD do servidor contem informaçoes:
+- Locais (descriçao orientada a objetos), alguns parametros:
+	tipo(hospital, abrigo), nome, endereço, coordenadas, fone, disponivel,
+	capacidade max, etc
+- Tipos de eventos, contem informaçoes constantes e tambem parametros
+	para receber informaçoes especificas do evento
+- Evento (broadcast) sinal que instancia um novo evento de tipo X, liberando o envio dos recursos

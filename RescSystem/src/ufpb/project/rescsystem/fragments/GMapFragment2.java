@@ -37,8 +37,6 @@ import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationManager;
@@ -47,7 +45,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 
-public class GMapFragment extends SupportMapFragment {
+public class GMapFragment2 extends SupportMapFragment {
 	
 	private GoogleMap gmap;
 	private LocationManager locMan;
@@ -65,8 +63,8 @@ public class GMapFragment extends SupportMapFragment {
 		public void onMapReady();
 	}
 	
-	public static GMapFragment gMapInstance(Fragment pf) {
-		GMapFragment f =  new GMapFragment();
+	public static GMapFragment2 gMapInstance(Fragment pf) {
+		GMapFragment2 f =  new GMapFragment2();
 		f.parentFragment = (MapListener) pf;
 		return f;
 	}
@@ -122,123 +120,39 @@ public class GMapFragment extends SupportMapFragment {
 	    .title("You are here")
 	    .snippet("Your last recorded location"));
 		
-		String placesSearchStr = "https://maps.googleapis.com/maps/api/place/nearbysearch/" +
-			    "json?location="+lat+","+lng+
-			    //"&radius=10000"+
-			    "&sensor=true" +
-			    "&types=hospital"+
-			    "&rankby=distance"+ "&name=hospital"+
-			    "&key=AIzaSyCxntrIHVBoFo_Ndv56cVxyqaxqPDb3CXU";
-		
-		new GetPlaces().execute(placesSearchStr);
-		
 		gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(lastLatLng, 13), 300, null);
-
+		
+		parentFragment.onMapReady();
 	}
 	
 	public void setPlacesMarkers(Marker[] placesMarkers) {
 		this.placesMarkers = placesMarkers;
 	}
 	
-	private class GetPlaces extends AsyncTask<String, Void, String> {
-
-		@Override
-		protected String doInBackground(String... placesURL) {
-
-			//build result as string
-			StringBuilder placesBuilder = new StringBuilder();
-			//process search parameter string(s)
-			for (String placeSearchURL : placesURL) {
-				HttpClient placesClient = new DefaultHttpClient();
-				try {
-					//try to fetch the data
+	public void addMarkers(ArrayList<Facility> placesList)
+		{
+			placesOptions = new MarkerOptions[placesList.size()];
+			placesMarkers = new Marker[placesList.size()];
+			
+			int i = 0;
+			for (Facility f: placesList) {
 				
-					//HTTP Get receives URL string
-					HttpGet placesGet = new HttpGet(placeSearchURL);
-					//execute GET with Client - return response
-					HttpResponse placesResponse = placesClient.execute(placesGet);
-					//check response status
-	 				StatusLine placeSearchStatus = placesResponse.getStatusLine();
-					//only carry on if response is OK
-					if (placeSearchStatus.getStatusCode() == 200) {
-						//get response entity
-						HttpEntity placesEntity = placesResponse.getEntity();
-						//get input stream setup
-						InputStream placesContent = placesEntity.getContent();
-						//create reader
-						InputStreamReader placesInput = new InputStreamReader(placesContent);
-						//use buffered reader to process
-						BufferedReader placesReader = new BufferedReader(placesInput);
-						//read a line at a time, append to string builder
-						String lineIn;
-						while ((lineIn = placesReader.readLine()) != null) {
-							placesBuilder.append(lineIn);
-						}
-					}
-				}
-				catch(Exception e){ 
-					e.printStackTrace(); 
-				}
-			}
-			return placesBuilder.toString();
-		}
-		
-		protected void onPostExecute(String result) {
-		
-			try {
-				JSONObject resultObject = new JSONObject(result);
-				JSONArray placesArray = resultObject.getJSONArray("results");
-				placesOptions = new MarkerOptions[placesArray.length()];
-				placesMarkers = new Marker[MAX_PLACES];
-				
-				for (int p=0; p<placesArray.length(); p++) {
-					boolean missingValue = false;
-					LatLng placeLL=null;
-					String placeName="";
-					String vicinity="";
+				LatLng placeLL = f.getLatlng();
+				String placeName = f.getName();
+				String address = f.getAddress();
 					
-					try {
-						JSONObject placeObject = placesArray.getJSONObject(p);
-						JSONObject loc = placeObject.getJSONObject("geometry").getJSONObject("location");
-						
-						placeLL = new LatLng(
-							    Double.valueOf(loc.getString("lat")),
-							    Double.valueOf(loc.getString("lng")));
-												
-						vicinity = placeObject.getString("vicinity");
-						placeName = placeObject.getString("name");
-						
-					} catch(JSONException jse) {
-					    missingValue=true;
-					    jse.printStackTrace();
-					}
-					if (missingValue) placesOptions[p]=null;
-					else {
-						
-						Facility f = new Facility(placeName, "999", vicinity, true);
-						facilities.add(f);
-						BitmapDescriptor icon = BitmapDescriptorFactory.
-								fromResource(R.drawable.hospital_marker_icon);
-						placesOptions[p]=new MarkerOptions()
-					    .position(placeLL)
-					    .title(placeName)
-					    .icon(icon)
-					    .snippet(vicinity);
-					}
-				}
-				
+//				BitmapDescriptor icon = BitmapDescriptorFactory.
+//						fromResource(R.drawable.hospital_marker_icon);
+//				
+				placesOptions[i++] = new MarkerOptions()
+			    .position(placeLL)
+			    .title(placeName)
+			    //.icon(icon)
+			    .snippet(address);
 			}
-			catch (Exception e) {
-			    e.printStackTrace();
-			}
-			if (placesOptions!=null && placesMarkers!=null){
-			    for(int p=0; p<placesOptions.length && p<placesMarkers.length; p++){
-			        // will be null if a value was missing
-			        if (placesOptions[p]!=null)
-			            placesMarkers[p]=gmap.addMarker(placesOptions[p]);
-			    }
-			}
-			parentFragment.onMapReady();
+		
+		for(int p=0; p<placesMarkers.length; p++){
+	        placesMarkers[p] = gmap.addMarker(placesOptions[p]);
 		}
 	}
 

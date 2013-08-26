@@ -22,7 +22,7 @@ public class MainActivity extends SherlockFragmentActivity implements
 	/* Fragments */
 	private InstructionsFragment f1;
 	private SheltersFragment f2;
-	private MyListFragment f3;
+	private HospitalsFragment f3;
 	private RoutesFragment f5;
 
 	String TAG = "rescsys";
@@ -41,12 +41,12 @@ public class MainActivity extends SherlockFragmentActivity implements
 				R.id.fragmento1);
 		f2 = (SheltersFragment) getSupportFragmentManager().findFragmentById(
 				R.id.fragmento2);
-		f3 = (MyListFragment) getSupportFragmentManager().findFragmentById(
+		f3 = (HospitalsFragment) getSupportFragmentManager().findFragmentById(
 				R.id.fragmento3);
 		f5 = (RoutesFragment) getSupportFragmentManager().findFragmentById(
 				R.id.fragmento5);
 
-//		f3.getListView().setOnItemClickListener(f3);
+		//f3.getListView().setOnItemClickListener(f3);
 
 		getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
