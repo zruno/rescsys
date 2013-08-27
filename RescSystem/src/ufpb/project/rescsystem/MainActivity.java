@@ -23,7 +23,7 @@ public class MainActivity extends SherlockFragmentActivity implements
 	private InstructionsFragment f1;
 	private SheltersFragment f2;
 	private HospitalsFragment f3;
-	private RoutesFragment f5;
+	private RoutesFragment f4;
 
 	String TAG = "rescsys";
 	
@@ -38,20 +38,18 @@ public class MainActivity extends SherlockFragmentActivity implements
         getActionBar().setDisplayShowTitleEnabled(false);
 
 		f1 = (InstructionsFragment) getSupportFragmentManager().findFragmentById(
-				R.id.fragmento1);
+				R.id.fragment1);
 		f2 = (SheltersFragment) getSupportFragmentManager().findFragmentById(
-				R.id.fragmento2);
+				R.id.fragment2);
 		f3 = (HospitalsFragment) getSupportFragmentManager().findFragmentById(
-				R.id.fragmento3);
-		f5 = (RoutesFragment) getSupportFragmentManager().findFragmentById(
-				R.id.fragmento5);
-
-		//f3.getListView().setOnItemClickListener(f3);
+				R.id.fragment3);
+		f4 = (RoutesFragment) getSupportFragmentManager().findFragmentById(
+				R.id.fragment4);
 
 		getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-		Tab aba1 = getSupportActionBar().newTab().setText("Instrucoes")
-				.setTabListener(this).setIcon(R.drawable.instructions);
+		Tab aba1 = getSupportActionBar().newTab().setText("Instruções")
+				.setTabListener(this).setIcon(R.drawable.information);
 		
 		Tab aba2 = getSupportActionBar().newTab().setText("Abrigos")
 				.setTabListener(this).setIcon(R.drawable.shelters);
@@ -59,8 +57,8 @@ public class MainActivity extends SherlockFragmentActivity implements
 		Tab aba3 = getSupportActionBar().newTab().setText("Hospitais")
 				.setTabListener(this).setIcon(R.drawable.hospitals);
 		
-		Tab aba5 = getSupportActionBar().newTab().setText("Fuga")
-				.setTabListener(this).setIcon(R.drawable.risc_areas);
+		Tab aba5 = getSupportActionBar().newTab().setText("Evacuação")
+				.setTabListener(this).setIcon(R.drawable.escape_route);
 		
 		getSupportActionBar().addTab(aba1);
 		getSupportActionBar().addTab(aba2);
@@ -79,13 +77,13 @@ public class MainActivity extends SherlockFragmentActivity implements
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {
 
 		if (tab.getPosition() == 0) {
-			ft.show(f1).hide(f2).hide(f3).hide(f5);
+			ft.show(f1).hide(f2).hide(f3).hide(f4);
 		}else if(tab.getPosition() == 1){
-			ft.hide(f1).show(f2).hide(f3).hide(f5);
+			ft.hide(f1).show(f2).hide(f3).hide(f4);
 		} else if(tab.getPosition() == 2){
-			ft.hide(f1).hide(f2).show(f3).hide(f5);
+			ft.hide(f1).hide(f2).show(f3).hide(f4);
 		} else {
-			ft.hide(f1).hide(f2).hide(f3).show(f5);
+			ft.hide(f1).hide(f2).hide(f3).show(f4);
 		}
 	}
 

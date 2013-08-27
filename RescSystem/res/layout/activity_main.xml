@@ -6,25 +6,25 @@
     android:layout_height="match_parent" >
 
     <fragment
-        android:id="@+id/fragmento1"
+        android:id="@+id/fragment1"
         android:name="ufpb.project.rescsystem.fragments.InstructionsFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <fragment
-        android:id="@+id/fragmento2"
+        android:id="@+id/fragment2"
         android:name="ufpb.project.rescsystem.fragments.SheltersFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <fragment
-        android:id="@+id/fragmento3"
+        android:id="@+id/fragment3"
         android:name="ufpb.project.rescsystem.fragments.HospitalsFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
     
     <fragment
-        android:id="@+id/fragmento5"
+        android:id="@+id/fragment4"
         android:name="ufpb.project.rescsystem.fragments.RoutesFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

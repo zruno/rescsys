@@ -1,9 +1,8 @@
 #Alta
 
 Funcionalidades
-- Localização do usuário
-- Embutir mapas no app (plano B: Intent para Google Maps)
 - Checar se há conectivade (durante as tarefas no geral)
+- Alertas de emergência (notificações)
 
 Back-end
 - Criar uma base de dados simples (SQLite? Arquivo?)
@@ -13,9 +12,8 @@ Back-end
 #Média
 
 UI
-- Só ícones na action bar (nomes fora)
-- Deixar ícones na action bar e não no dropdown menu na v4.0
-- Remover ícones inúteis na v4.0 (editar, novo)
+- Deixar ícones na action bar e não no dropdown menu na v 4.0 (testar)
+- Refatorar código
 
 
 #Baixa

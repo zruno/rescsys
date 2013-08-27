@@ -1067,12 +1067,14 @@ containing a value of this type.
         public static final int common_signin_btn_text_pressed_dark=0x7f020086;
         public static final int common_signin_btn_text_pressed_light=0x7f020087;
         public static final int escape_route=0x7f020088;
-        public static final int hospital_marker_icon=0x7f020089;
-        public static final int hospitals=0x7f02008a;
-        public static final int ic_launcher=0x7f02008b;
+        public static final int hospitals=0x7f020089;
+        public static final int ic_launcher=0x7f02008a;
+        public static final int information=0x7f02008b;
         public static final int instructions=0x7f02008c;
-        public static final int risc_areas=0x7f02008d;
-        public static final int shelters=0x7f02008e;
+        public static final int marker_default=0x7f02008d;
+        public static final int marker_hospital=0x7f02008e;
+        public static final int marker_shelter=0x7f02008f;
+        public static final int shelters=0x7f020090;
     }
     public static final class id {
         public static final int FrameLayout1=0x7f050036;
@@ -1118,18 +1120,18 @@ containing a value of this type.
         public static final int action_settings=0x7f050040;
         public static final int container=0x7f05003b;
         public static final int container2=0x7f05003f;
+        public static final int container3=0x7f05003e;
         public static final int disableHome=0x7f05000d;
         public static final int edit_query=0x7f05002a;
         public static final int event_instructions=0x7f05003d;
-        public static final int fragmento1=0x7f050037;
-        public static final int fragmento2=0x7f050038;
-        public static final int fragmento3=0x7f050039;
-        public static final int fragmento5=0x7f05003a;
+        public static final int fragment1=0x7f050037;
+        public static final int fragment2=0x7f050038;
+        public static final int fragment3=0x7f050039;
+        public static final int fragment4=0x7f05003a;
         public static final int general_instructions=0x7f05003c;
         public static final int homeAsUp=0x7f05000a;
         public static final int hybrid=0x7f050004;
         public static final int listMode=0x7f050006;
-        public static final int mapRoutes=0x7f05003e;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
         public static final int satellite=0x7f050002;

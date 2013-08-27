@@ -2,9 +2,6 @@ package ufpb.project.rescsystem.fragments;
 
 import java.util.ArrayList;
 
-import com.google.android.gms.maps.model.LatLng;
-
-import ufpb.project.rescsystem.R;
 import ufpb.project.rescsystem.fragments.GMapFragment.MapListener;
 import ufpb.project.rescsystem.modules.Facility;
 import android.os.Bundle;
@@ -22,8 +19,11 @@ public class MyListFragment extends ListFragment
 
 	private GMapFragment map;
 	private ArrayList<Facility> data;
+	
 	private int fragmentId;
 	private int mapContainerId;
+	
+	private int mapReadyFlag = 0;
 	
 	public void setLayoutId(int fragmentId, int containerId) {
 		this.fragmentId = fragmentId;
@@ -33,14 +33,13 @@ public class MyListFragment extends ListFragment
 	@Override
 	public View onCreateView(LayoutInflater infltr, ViewGroup container,
 			Bundle savedState) {
-		View v = infltr.inflate(fragmentId, container, true);
-		return v;
+		return infltr.inflate(fragmentId, container, true);
 	}
 	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		map = GMapFragment.gMapInstance(this);
+		map = GMapFragment.gMapInstance(this, data);
 		
 		FragmentTransaction ft = getFragmentManager().beginTransaction();
 		ft.replace(mapContainerId, map);
@@ -89,8 +88,12 @@ public class MyListFragment extends ListFragment
 
 	@Override
 	public void onMapReady() {
-		data = map.getPlaces();
-		setListView();
+		mapReadyFlag++;
+		if (mapReadyFlag == 2) {
+			setListView();
+			map.addMarkers();
+			mapReadyFlag = 0;
+		}
 	}
 	
 }
