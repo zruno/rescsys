@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import ufpb.project.rescsystem.fragments.GMapFragment.MapListener;
 import ufpb.project.rescsystem.modules.Facility;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;

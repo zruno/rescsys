@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<shelters>
+
+	<shelter>
+		<name>Estádio Almeidão</name>
+		<address>Cristo Redentor, João Pessoa - PB</address>
+		<phone>(83) 3264-5765</phone>
+		<lat>-7.167500</lat>
+		<lng>-34.872780</lng>
+	</shelter>
+	
+	<shelter>
+		<name>UFPB - Universidade Federal da Paraíba</name>
+		<address>Cidade Universitária - Castelo Branco, João Pessoa</address>
+		<phone>(83) 3216-7200</phone>
+		<lat>-7.135599</lat>
+		<lng>-34.843103</lng>
+	</shelter>
+
+	<shelter>
+		<name>IFPB - Instituto Federal de Educação, Ciência e Tecnologia da Paraíba</name>
+		<address>Av. Primeiro de Maio, 720 - Jaguaribe, João Pessoa - PB</address>
+		<phone>(83) 3208-3000</phone>
+		<lat>-7.133087</lat>
+		<lng>-34.873444</lng>
+	</shelter>
+	
+	<shelter>
+		<name>Espaço Cultural</name>
+		<address>Av. Abdias Gomes de Almeida, 800, Tambauzinho, João Pessoa</address>
+		<phone>(83) 3243-0707</phone>
+		<lat>-7.121706</lat>
+		<lng>-34.843435</lng>
+	</shelter>
+	
+	<shelter>
+		<name>Estádio Leonardo da Silveira (Estádio da Graça)</name>
+		<address>Cruz das Armas, João Pessoa - PB, Brazil</address>
+		<phone>(83) 3200-0004</phone>
+		<lat>-7.137430</lat>
+		<lng>-34.890702</lng>
+	</shelter>
+
+</shelters>

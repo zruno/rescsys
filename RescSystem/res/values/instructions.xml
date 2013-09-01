@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="flood_before">Kit de emergencia
+        Evacuação área segura</string>
+    <string name="flood_during">- Não use equipamentos eletrônicos</string>
+    <string name="flood_after">Contate seus familiares</string>
+    
+    
+</resources>

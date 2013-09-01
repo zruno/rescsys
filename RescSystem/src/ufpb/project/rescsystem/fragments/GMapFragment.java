@@ -17,6 +17,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import android.content.Context;
+import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
@@ -34,8 +35,9 @@ public class GMapFragment extends SupportMapFragment {
 	private MarkerOptions[] placesOptions;
 	private ArrayList<Facility> facilities;
 	private MapListener parentFragment;
-	private Polyline route;
 	
+	private Polyline route;
+
 	public Polyline getRoute() {
 		return route;
 	}

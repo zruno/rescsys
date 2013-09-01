@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<shelters>
+
+	<shelter>
+		<name>Abrigo 1</name>
+		<address>Rua 1</address>
+		<phone>9999-9991</phone>
+		<lat>-7.132298</lat>
+		<lng>-34.886339</lng>
+	</shelter>
+
+	<shelter>
+		<name>Abrigo 2</name>
+		<address>Rua 2</address>
+		<phone>9999-9992</phone>
+		<lat>-7.159040</lat>
+		<lng>-34.881961</lng>
+	</shelter>
+
+</shelters>

@@ -48,17 +48,20 @@ public class MainActivity extends SherlockFragmentActivity implements
 
 		getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-		Tab aba1 = getSupportActionBar().newTab().setText("Instruções")
-				.setTabListener(this).setIcon(R.drawable.information);
+		Tab aba1 = getSupportActionBar().newTab()
+				.setText("Instruções")
+				.setTabListener(this)
+				//.setIcon(R.drawable.information)
+				;
 		
 		Tab aba2 = getSupportActionBar().newTab().setText("Abrigos")
-				.setTabListener(this).setIcon(R.drawable.shelters);
+				.setTabListener(this);//.setIcon(R.drawable.shelters);
 
 		Tab aba3 = getSupportActionBar().newTab().setText("Hospitais")
-				.setTabListener(this).setIcon(R.drawable.hospitals);
+				.setTabListener(this);//.setIcon(R.drawable.hospitals);
 		
 		Tab aba5 = getSupportActionBar().newTab().setText("Evacuação")
-				.setTabListener(this).setIcon(R.drawable.escape_route);
+				.setTabListener(this);//.setIcon(R.drawable.escape_route);
 		
 		getSupportActionBar().addTab(aba1);
 		getSupportActionBar().addTab(aba2);

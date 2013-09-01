@@ -1,22 +1,121 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:android1="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
- 
-	<TextView 
-	    android:id="@+id/general_instructions"
-	    android:text="@string/general_instructions"
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	>
+    
+	<LinearLayout 
+	    android:id="@+id/topcontrolbar"
 	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    /> 
+	    android:layout_height="match_parent"
+	    android:orientation="vertical"
+	    android:layout_alignParentTop="true" >
+	 
+	    <TextView 
+	        android:id="@+id/home_label_event"
+	        android:paddingLeft="5dp"
+	        android:text="Alerta de enchente"
+	        android:textSize="20sp"
+	        android:gravity="center_vertical"
+	        android:layout_width="fill_parent"
+	        android:layout_height="50sp"
+	        />
 	    
-   	<TextView 
-	    android:id="@+id/event_instructions"
-	    android:text="@string/event_instructions"
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    /> 
+	    <View
+			android:layout_width="fill_parent"
+			android:layout_height="0.2dp"
+			android:id="@+id/separator"
+			android:visibility="visible"
+			android:background="@android:color/darker_gray"/>
+	   
+	    <TextView 
+	        android:id="@+id/home_event"
+	        android:paddingLeft="5dp"
+	        android:textSize="17sp"
+	        android:gravity="top|left"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        />
+	    
+	    <ExpandableListView 
+	        android:id="@+id/expandable_list"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:transcriptMode="alwaysScroll"
+	        android:cacheColorHint="#00000000"
+	        android:listSelector="@android:color/transparent"/>
 	
-	
-</LinearLayout>
+	</LinearLayout>
+	    
+	<!-- Bottom Bar -->
+    <LinearLayout 
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:background="#151515"
+        style="?android:attr/buttonBarStyle"
+        >
+       
+       <ImageButton
+           android:id="@+id/button_1"
+           style="?android:attr/buttonBarButtonStyle"
+           android:src="@drawable/phone"
+           android:layout_weight="1"
+           android:layout_height="match_parent"
+           android:layout_width="0dp"
+        />
+       
+       	<View
+			android:layout_width="0.2dp"
+			android:layout_height="50dp"
+			android:id="@+id/separatorh1"
+			android:visibility="visible"
+			android:background="@android:color/holo_blue_light"/>
+       
+       <ImageButton
+           style="?android:attr/buttonBarButtonStyle"
+           android:id="@+id/button_2"
+           android:src="@drawable/message"
+           android:layout_weight="1"
+           android:layout_height="match_parent"
+           android:layout_width="0dp"
+        />
+       
+       	<View
+			android:layout_width="0.2dp"
+			android:layout_height="50dp"
+			android:id="@+id/separatorh2"
+			android:visibility="visible"
+			android:background="@android:color/holo_blue_light"/>
+       
+       <ImageButton
+           style="?android:attr/buttonBarButtonStyle"
+           android:id="@+id/button_3"
+           android:src="@drawable/share"
+           android:layout_weight="1"
+           android:layout_height="match_parent"
+           android:layout_width="0dp"
+        />
+       
+    	<View
+			android:layout_width="0.2dp"
+			android:layout_height="50dp"
+			android:id="@+id/separatorh3"
+			android:visibility="visible"
+			android:background="@android:color/holo_blue_light"/>        
+       
+       <ImageButton
+           style="?android:attr/buttonBarButtonStyle"
+           android:id="@+id/button_4"
+           android:src="@drawable/information"
+           android:layout_weight="1"
+           android:layout_height="match_parent"
+           android:layout_width="0dp"
+        />
+        
+	</LinearLayout>
+    
+</RelativeLayout>

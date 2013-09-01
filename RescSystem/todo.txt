@@ -4,19 +4,24 @@ Funcionalidades
 - Checar se há conectivade (durante as tarefas no geral)
 - Alertas de emergência (notificações)
 
-Back-end
-- Criar uma base de dados simples (SQLite? Arquivo?)
-- Utilizar 'Cursor' ao invés de Arrays para os dados (especialmente Adapters)
-
-
 #Média
 
 UI
 - Deixar ícones na action bar e não no dropdown menu na v 4.0 (testar)
-- Refatorar código
+
+- Localidade na Activity principal
+- Atualizar localidade
+
+- Nao havendo conectividade UI respectiva
+
+- Recomendaçoes energia smartphone
+
+- Utilizar 'Cursor' ao invés de Arrays para os dados (especialmente Adapters)
 
 
 #Baixa
+
+- Monitorar localidade proxima (addProximityAlert - apropriado)
 
 Mudar paradigma de uso dos Fragments, de show/hide para transitions e criar
 somente quando for utilizar (desempenho)
