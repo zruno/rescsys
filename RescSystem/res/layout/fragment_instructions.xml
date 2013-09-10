@@ -17,6 +17,7 @@
 	        android:paddingLeft="5dp"
 	        android:text="Alerta de enchente"
 	        android:textSize="20sp"
+	        android:background="#D6D6D6"
 	        android:gravity="center_vertical"
 	        android:layout_width="fill_parent"
 	        android:layout_height="50sp"
@@ -31,12 +32,36 @@
 	   
 	    <TextView 
 	        android:id="@+id/home_event"
+	        android:paddingTop="3dp"
 	        android:paddingLeft="5dp"
+		    android:paddingBottom="3dp"
 	        android:textSize="17sp"
 	        android:gravity="top|left"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
 	        />
+	    
+	    <View
+			android:layout_width="fill_parent"
+			android:layout_height="0.2dp"
+			android:visibility="visible"
+			android:background="@android:color/darker_gray"/>
+	    
+	 <TextView 
+		    android:text="O que fazer?"
+		    android:paddingLeft="5dp"
+		    android:paddingBottom="3dp"
+		    android:textSize="20sp"
+		    android:background="#D6D6D6"
+		    android:gravity="center|left"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    />
+          <View
+			android:layout_width="fill_parent"
+			android:layout_height="0.2dp"
+			android:visibility="visible"
+			android:background="@android:color/darker_gray"/>
 	    
 	    <ExpandableListView 
 	        android:id="@+id/expandable_list"

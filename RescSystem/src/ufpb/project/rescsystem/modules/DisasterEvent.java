@@ -1,6 +1,12 @@
 package ufpb.project.rescsystem.modules;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+
+import com.google.android.gms.maps.model.LatLng;
+
+import android.location.Location;
 
 public class DisasterEvent {
 
@@ -13,6 +19,8 @@ public class DisasterEvent {
 	private String[] neighboorhoodHigh;
 	private String[] cities;
 	private String about;
+	
+	private ArrayList<LatLng> points;
 	
 	public Date getEventWatch() {
 		return eventWatch;
@@ -72,11 +80,25 @@ public class DisasterEvent {
 		return text.toString();
 	}
 	
+	private String dateToString(Date date) {
+		SimpleDateFormat dateformat = new SimpleDateFormat("dd/MM/yyyy - HH:mm");
+		String strDate;
+		return strDate = dateformat.format(date);
+	}
+	
 	public String toString() {
 		return "Cidades atingidas: " +toStringArray(cities) +"\n"
 				+"Bairros fortemente atingidos: " +toStringArray(neighboorhoodHigh) +"\n"
 				+"Bairros levemente atingidos: " +toStringArray(neighborhoodLow) +"\n\n"
+				+"Início: " +dateToString(eventStart) +"\n"
+				+"Fim previsto: " +dateToString(eventForeseenEnd) +"\n\n"
 				+"Sobre: " +about;
+	}
+	public ArrayList<LatLng> getPoints() {
+		return points;
+	}
+	public void setPoints(ArrayList<LatLng> points) {
+		this.points = points;
 	}
 	
 }

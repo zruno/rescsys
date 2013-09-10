@@ -1123,42 +1123,46 @@ containing a value of this type.
         public static final int abs__textButton=0x7f070017;
         public static final int abs__title=0x7f07001f;
         public static final int abs__up=0x7f07000f;
-        public static final int action_settings=0x7f07004d;
-        public static final int button_1=0x7f070041;
-        public static final int button_2=0x7f070043;
-        public static final int button_3=0x7f070045;
-        public static final int button_4=0x7f070047;
-        public static final int container=0x7f07003b;
-        public static final int container2=0x7f070049;
-        public static final int container3=0x7f070048;
+        public static final int action_settings=0x7f070051;
+        public static final int button_1=0x7f070045;
+        public static final int button_2=0x7f070047;
+        public static final int button_3=0x7f070049;
+        public static final int button_4=0x7f07004b;
+        public static final int container=0x7f07003c;
+        public static final int container2=0x7f07004d;
+        public static final int container3=0x7f07004c;
         public static final int disableHome=0x7f07000d;
         public static final int edit_query=0x7f07002a;
-        public static final int expandable_list=0x7f070040;
-        public static final int fragment1=0x7f070037;
-        public static final int fragment2=0x7f070038;
-        public static final int fragment3=0x7f070039;
-        public static final int fragment4=0x7f07003a;
+        public static final int expandable_list=0x7f070044;
+        public static final int expandable_list2=0x7f070040;
+        public static final int fragment1=0x7f070038;
+        public static final int fragment2=0x7f070039;
+        public static final int fragment3=0x7f07003a;
+        public static final int fragment4=0x7f07003b;
+        public static final int fragmentD=0x7f070037;
         public static final int homeAsUp=0x7f07000a;
-        public static final int home_event=0x7f07003f;
-        public static final int home_label_event=0x7f07003d;
+        public static final int home_event=0x7f070043;
+        public static final int home_event2=0x7f07003f;
+        public static final int home_label_event=0x7f070042;
         public static final int hybrid=0x7f070004;
         public static final int listMode=0x7f070006;
-        public static final int list_item_child=0x7f07004a;
-        public static final int list_item_text_child=0x7f07004b;
-        public static final int list_item_text_view=0x7f07004c;
+        public static final int list_item_child=0x7f07004e;
+        public static final int list_item_text_child=0x7f07004f;
+        public static final int list_item_text_view=0x7f070050;
         public static final int none=0x7f070000;
         public static final int normal=0x7f070001;
         public static final int satellite=0x7f070002;
-        public static final int separator=0x7f07003e;
-        public static final int separatorh1=0x7f070042;
-        public static final int separatorh2=0x7f070044;
-        public static final int separatorh3=0x7f070046;
+        public static final int separator=0x7f07003d;
+        public static final int separatorh1=0x7f070046;
+        public static final int separatorh2=0x7f070048;
+        public static final int separatorh3=0x7f07004a;
         public static final int showCustom=0x7f07000c;
         public static final int showHome=0x7f070009;
         public static final int showTitle=0x7f07000b;
+        public static final int spinner=0x7f07003e;
         public static final int tabMode=0x7f070007;
         public static final int terrain=0x7f070003;
-        public static final int topcontrolbar=0x7f07003c;
+        public static final int topcontrolbar=0x7f070041;
         public static final int useLogo=0x7f070008;
         public static final int wrap_content=0x7f070005;
     }
@@ -1187,15 +1191,18 @@ containing a value of this type.
         public static final int abs__search_dropdown_item_icons_2line=0x7f030012;
         public static final int abs__search_view=0x7f030013;
         public static final int abs__simple_dropdown_hint=0x7f030014;
-        public static final int activity_main=0x7f030015;
-        public static final int fragment_hospitais=0x7f030016;
-        public static final int fragment_instructions=0x7f030017;
-        public static final int fragment_routes=0x7f030018;
-        public static final int fragment_shelters=0x7f030019;
-        public static final int list_item_child=0x7f03001a;
-        public static final int list_item_parent=0x7f03001b;
-        public static final int sherlock_spinner_dropdown_item=0x7f03001c;
-        public static final int sherlock_spinner_item=0x7f03001d;
+        public static final int activity_disconnected=0x7f030015;
+        public static final int activity_main=0x7f030016;
+        public static final int fragment_hospitais=0x7f030017;
+        public static final int fragment_information=0x7f030018;
+        public static final int fragment_instructions=0x7f030019;
+        public static final int fragment_routes=0x7f03001a;
+        public static final int fragment_shelters=0x7f03001b;
+        public static final int list_item_child=0x7f03001c;
+        public static final int list_item_parent=0x7f03001d;
+        public static final int sherlock_spinner_dropdown_item=0x7f03001e;
+        public static final int sherlock_spinner_item=0x7f03001f;
+        public static final int spinnerview=0x7f030020;
     }
     public static final class menu {
         public static final int activity_exemplo_sherlock=0x7f0e0000;
@@ -1247,8 +1254,8 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abs__shareactionprovider_share_with_application=0x7f08001c;
-        public static final int action_settings=0x7f08002b;
-        public static final int app_name=0x7f08002a;
+        public static final int action_settings=0x7f08003c;
+        public static final int app_name=0x7f08003b;
         /**   Title for notification shown when GooglePlayServices needs to be
         enabled for a application to work. [CHAR LIMIT=70] 
          */
@@ -1272,7 +1279,7 @@ containing a value of this type.
         [CHAR LIMIT=70] 
          */
         public static final int auth_client_using_bad_version_title=0x7f08000f;
-        public static final int big_text=0x7f080034;
+        public static final int big_text=0x7f080045;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -1328,20 +1335,37 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f08000e;
-        public static final int escape_route=0x7f080031;
-        public static final int event_instructions=0x7f080033;
-        public static final int flood_after=0x7f080026;
-        public static final int flood_before=0x7f080024;
-        public static final int flood_during=0x7f080025;
-        public static final int general_instructions=0x7f080032;
-        public static final int hello_world=0x7f08002c;
-        public static final int hospitals=0x7f08002f;
-        public static final int instructions=0x7f08002d;
-        public static final int label_after=0x7f080029;
-        public static final int label_before=0x7f080027;
-        public static final int label_during=0x7f080028;
-        public static final int risc_areas=0x7f080030;
-        public static final int shelters=0x7f08002e;
+        public static final int earthquake_about=0x7f08002c;
+        public static final int earthquake_after=0x7f08002f;
+        public static final int earthquake_before=0x7f08002d;
+        public static final int earthquake_during=0x7f08002e;
+        public static final int escape_route=0x7f080042;
+        public static final int event_instructions=0x7f080044;
+        public static final int fire_about=0x7f080030;
+        public static final int fire_after=0x7f080033;
+        public static final int fire_before=0x7f080031;
+        public static final int fire_during=0x7f080032;
+        public static final int flood_about=0x7f080024;
+        public static final int flood_after=0x7f080027;
+        public static final int flood_before=0x7f080025;
+        public static final int flood_during=0x7f080026;
+        public static final int general_instructions=0x7f080043;
+        public static final int hello_world=0x7f08003d;
+        public static final int hospitals=0x7f080040;
+        public static final int hurricane_about=0x7f080028;
+        public static final int hurricane_after=0x7f08002b;
+        public static final int hurricane_before=0x7f080029;
+        public static final int hurricane_during=0x7f08002a;
+        public static final int instructions=0x7f08003e;
+        public static final int label_after=0x7f08003a;
+        public static final int label_before=0x7f080038;
+        public static final int label_during=0x7f080039;
+        public static final int risc_areas=0x7f080041;
+        public static final int shelters=0x7f08003f;
+        public static final int tsunami_about=0x7f080034;
+        public static final int tsunami_after=0x7f080037;
+        public static final int tsunami_before=0x7f080035;
+        public static final int tsunami_during=0x7f080036;
     }
     public static final class style {
         /** 

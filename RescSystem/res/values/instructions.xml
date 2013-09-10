@@ -1,10 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     
-    <string name="flood_before">Kit de emergencia
-        Evacuação área segura</string>
-    <string name="flood_during">- Não use equipamentos eletrônicos</string>
-    <string name="flood_after">Contate seus familiares</string>
+    <string name="flood_about">Sobre: Uma inundação pode ser o resultado de uma chuva que não foi suficientemente absorvida pelo solo e outras formas de escoamento, causando transbordamentos. Também pode ser provocada de forma induzida pelo homem através da construção de barragens e pela abertura ou rompimento de comportas de represas.</string>
+    <string name="flood_before">Moradores de regiões propensas a inundações devem manter-se informados sobre as condições meteorológicas:\n
+		- Ao primeiro sinal de chuva forte, coloque os móveis, eletrodomésticos e demais objetos em lugares altos.\n 
+        - Desligue aparelhos elétricos e eletrônicos, a chave geral de sua casa e feche os registros de entrada de água e de gás.
+        </string>
+    <string name="flood_during">- Evite contato com a água da enchente, pode estar contaminada.\n
+		- Não manuseie equipamentos eletrônicos até eles serem checados.\n
+		- Continue se informando através das notícias por meios de comunicação como rádio.\n
+		- Permaneça longe de áreas sujeitas a inundação ou deslizamento.\n
+		- Não tente andar, nada ou dirigir através da enchente.</string>
+    <string name="flood_after">- Contate seus familiares</string>
+    
+    <string name="hurricane_about"></string>
+    <string name="hurricane_before">
+        - Remova todos os objetos soltos de jardins e sacadas.\n
+		- Feche as cortinas e fique longe das janelas para prevenir de ferimentos, caso algum vidro se quebre.\n
+		- Se sua casa tiver paredes ou portas de vidro, passe fita adesiva para minimizar os efeitos dos ventos.\n
+		- Faça suprimento de baterias, lanternas, água, comida enlatada, (não use velas para prevenir incêndios).\n
+		- Mantenha o tanque de seu carro cheio.\n
+    </string>
+    <string name="hurricane_during">
+        - Permaneça dentro de casa e fique calmo.\n
+		- Fique alerta para enchentes.\n
+	</string>
+    <string name="hurricane_after">
+        - Não saia de casa se os ventos do furacão desaparecerem repentinamente, isso pode significar que o olho do furacão está passando sobre a cidade e que os ventos voltarão repetinamente com a intensidade anterior.
+    </string>
+    
+    <string name="earthquake_about"></string>
+    <string name="earthquake_before">
+        </string>
+    <string name="earthquake_during">
+    </string>
+    <string name="earthquake_after">    
+    </string>
+    
+    <string name="fire_about"></string>
+    <string name="fire_before">
+        </string>
+    <string name="fire_during"></string>
+    <string name="fire_after"></string>
+    
+    <string name="tsunami_about"></string>
+    <string name="tsunami_before">
+        </string>
+    <string name="tsunami_during"></string>
+    <string name="tsunami_after"></string>
     
     
 </resources>

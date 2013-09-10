@@ -13,4 +13,15 @@
 	<about>Uma inundação pode ser o resultado de uma chuva que não foi suficientemente absorvida pelo solo e outras formas de escoamento, causando transbordamentos. Também pode ser provocada de forma induzida pelo homem através da construção de barragens e pela abertura ou rompimento de comportas de represas.
 	</about>
 	
+	<watch>10-09-2013,10-30</watch>
+	<start>10-09-2013,13-30</start>
+	<alert>10-09-2013,10-30</alert>
+	<foreseenEnd>10-09-2013,22-30</foreseenEnd>
+	
+	<riskArea>
+	    <point>-7.10,-34.10</point>
+	    <point>-7.30,-34.30</point>
+	    <point>-7.50,-34.50</point>
+	</riskArea>
+	
 </event>

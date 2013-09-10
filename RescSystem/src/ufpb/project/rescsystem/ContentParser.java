@@ -1,7 +1,11 @@
 package ufpb.project.rescsystem;
 
 import java.io.InputStream;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.logging.SimpleFormatter;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -11,6 +15,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
+import android.location.Location;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -119,6 +125,21 @@ public class ContentParser {
 			}
 		}
 		
+		ArrayList<LatLng> coords = new ArrayList<LatLng>();
+		NodeList ra = doc.getElementsByTagName("");
+		for (int i = 0; ra.getLength() > i; i++) {
+			Node point = ra.item(i);
+			
+			if (point.getNodeType() == Node.ELEMENT_NODE) {
+				Element p = (Element) point;
+				
+				String pt = p.getTextContent();
+				String pts[] = pt.split(",");
+				LatLng coord = new LatLng(Integer.parseInt(pts[0]), Integer.parseInt(pts[1]));
+				coords.add(coord);
+			}
+		}
+		
 		NodeList a = doc.getElementsByTagName("about");
 		Node ab = a.item(0);
 		String about = "";
@@ -126,12 +147,59 @@ public class ContentParser {
 			about = ab.getTextContent();
 		}
 		
+		NodeList s = doc.getElementsByTagName("start");
+		String start = "";
+		Node sd = s.item(0);
+		if (sd.getNodeType() == Node.ELEMENT_NODE) {
+			start = sd.getTextContent();
+		}
+		Date startE = formatDate(start);
+		
+		NodeList e = doc.getElementsByTagName("foreseenEnd");
+		String end = "";
+		Node ed = e.item(0);
+		if (ed.getNodeType() == Node.ELEMENT_NODE) {
+			end = ed.getTextContent();
+		}
+		Date endE = formatDate(end);
+		
+		NodeList w = doc.getElementsByTagName("watch");
+		String watch = "";
+		Node wa = w.item(0);
+		if (wa.getNodeType() == Node.ELEMENT_NODE) {
+			watch = wa.getTextContent();
+		}
+		Date watchE = formatDate(watch);
+		
+		NodeList alt = doc.getElementsByTagName("start");
+		String alert = "";
+		Node al = alt.item(0);
+		if (al.getNodeType() == Node.ELEMENT_NODE) {
+			alert = al.getTextContent();
+		}
+		Date alertE = formatDate(alert);
+		
 		event.setAbout(about);
 		event.setCities(cities);
 		event.setNeighboorhoodHigh(neighborH);
 		event.setNeighborhoodLow(neighborL);
+		event.setEventAlert(alertE);
+		event.setEventForeseenEnd(endE);
+		event.setEventStart(startE);
+		event.setEventWatch(watchE);
+		event.setPoints(coords);
 		
 		return event;
+	}
+	
+	private Date formatDate(String dateStr) {
+		Date date = null;
+		try {
+			date = new SimpleDateFormat("dd-MM-yyyy,HH-mm").parse(dateStr);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return date;
 	}
 	
 }

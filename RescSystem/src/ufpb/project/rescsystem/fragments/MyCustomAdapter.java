@@ -118,16 +118,6 @@ public class MyCustomAdapter extends BaseExpandableListAdapter {
         super.registerDataSetObserver(observer);
     }
  
-// Intentionally put on comment, if you need on click deactivate it
-/*  @Override
-    public void onClick(View view) {
-        ViewHolder holder = (ViewHolder)view.getTag();
-        if (view.getId() == holder.button.getId()){
- 
-           // DO YOUR ACTION
-        }
-    }*/
-
     protected class ViewHolder {
            protected int childPosition;
            protected int groupPosition;

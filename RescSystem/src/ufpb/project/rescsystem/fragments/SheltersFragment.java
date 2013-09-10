@@ -25,16 +25,7 @@ public class SheltersFragment extends MyListFragment {
 		InputStream input = getActivity().getResources().openRawResource(R.raw.shelters);
 		setData(new ContentParser().parseResources(input));
 		
-		Utilities.printFList(getData(), "getdata");
-		
-//		setData(new ArrayList<Facility>());
-//		getData().add(new Shelter("Abrigo1", "Rua 1", "9999", true,
-//				new LatLng(-7.132298, -34.886339)));
-//		getData().add(new Shelter("Abrigo2", "Rua 2", "9998", true,
-//				new LatLng(-7.159040, -34.881961)));
-//		getData().add(new Shelter("Abrigo3", "Rua 3", "9998", true,
-//				new LatLng(-7.216691, -34.876125)));
-		
+		setColor(Color.argb(255, 12, 174, 0));
 		setLayoutId(R.layout.fragment_shelters, R.id.container2);
 		
 		super.onCreate(savedInstanceState);

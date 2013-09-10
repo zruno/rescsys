@@ -71,7 +71,7 @@ public class ParseDirectionsTask extends AsyncTask< String, Integer, List<List<H
             // Adding all the points in the route to LineOptions
             lineOptions.addAll(points);
             lineOptions.width(4);
-            lineOptions.color(Color.argb(255, 12, 174, 0));
+            lineOptions.color(map.getRouteColor());
         }
 
         // Drawing polyline in the Google Map for the i-th route

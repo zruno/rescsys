@@ -6,6 +6,7 @@ import ufpb.project.rescsystem.R;
 import ufpb.project.rescsystem.maputils.GetPlacesTask;
 import ufpb.project.rescsystem.modules.Facility;
 import android.content.Context;
+import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
@@ -36,6 +37,8 @@ public class HospitalsFragment extends MyListFragment {
 		
 		setData(new ArrayList<Facility>());
 		new GetPlacesTask(getData(), this, "hospital").execute(placesSearchStr);
+		
+		setColor(Color.RED);
 		
 		super.onCreate(savedInstanceState);
 	}

@@ -23,6 +23,7 @@ public class MyListFragment extends ListFragment
 	
 	private int fragmentId;
 	private int mapContainerId;
+	private int color;
 	
 	private int mapReadyFlag = 0;
 	
@@ -41,6 +42,7 @@ public class MyListFragment extends ListFragment
 		super.onCreate(savedInstanceState);
 
 		map = GMapFragment.gMapInstance(this, data);
+		map.setRouteColor(color);
 		
 		FragmentTransaction ft = getFragmentManager().beginTransaction();
 		ft.replace(mapContainerId, map);
@@ -95,6 +97,10 @@ public class MyListFragment extends ListFragment
 			map.addMarkers();
 			mapReadyFlag = 0;
 		}
+	}
+
+	public void setColor(int color) {
+		this.color = color;
 	}
 	
 }

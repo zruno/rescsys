@@ -37,7 +37,8 @@ public class GMapFragment extends SupportMapFragment {
 	private MapListener parentFragment;
 	
 	private Polyline route;
-
+	private int routeColor;
+	
 	public Polyline getRoute() {
 		return route;
 	}
@@ -70,6 +71,7 @@ public class GMapFragment extends SupportMapFragment {
 			String address = f.getAddress();
 			
 			int iconId;
+			
 			if (f instanceof Hospital)
 				iconId = R.drawable.marker_hospital;
 			else if (f instanceof Shelter)
@@ -122,13 +124,16 @@ public class GMapFragment extends SupportMapFragment {
 		super.onCreate(savedInstanceState);
 		
 		setPlacesMarkers(new Marker[MAX_PLACES]);
-		locMan = (LocationManager) 
-				getActivity().getSystemService(Context.LOCATION_SERVICE);
+
 	}
 	
-	public void onResume() {
+	public void onStart() {
+
+		super.onStart();
 		
-		super.onResume();
+		locMan = (LocationManager) 
+				getActivity().getSystemService(Context.LOCATION_SERVICE);
+		
 		gmap = getMap();
 		parentFragment.onMapReady();
 		
@@ -140,8 +145,8 @@ public class GMapFragment extends SupportMapFragment {
 		LatLng lastLatLng = new LatLng(lat, lng);
 		userMarker = gmap.addMarker(new MarkerOptions()
 	    .position(lastLatLng)
-	    .title("You are here")
-	    .snippet("Your last recorded location"));
+	    .title("Você está aqui")
+	    .snippet("Sua última localização registrada"));
 		
 		gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(lastLatLng, 13), 300, null);
 	}
@@ -167,4 +172,12 @@ public class GMapFragment extends SupportMapFragment {
         
         return url;
     }
+
+	public int getRouteColor() {
+		return routeColor;
+	}
+
+	public void setRouteColor(int routeColor) {
+		this.routeColor = routeColor;
+	}
 }

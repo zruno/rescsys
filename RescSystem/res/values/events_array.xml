@@ -2,11 +2,11 @@
 <resources>
     
     <string-array name="events_array">
-	    <item>Xasd</item>
-	    <item>Venus</item>
-	    <item>Earth</item>
-	    <item>Mars</item>
-	    <item>Jupiter</item>
+	    <item>Inundação</item>
+	    <item>Terremoto</item>
+	    <item>Furacão</item>
+	    <item>Incêndio</item>
+	    <item>Tsunami</item>
     </string-array>
     
 </resources>

@@ -21,7 +21,7 @@ UI
 
 #Baixa
 
-- Monitorar localidade proxima (addProximityAlert - apropriado)
+- Monitorar localidade proxima (addProximityAlert - apropriado, bateria <)
 
 Mudar paradigma de uso dos Fragments, de show/hide para transitions e criar
 somente quando for utilizar (desempenho)
