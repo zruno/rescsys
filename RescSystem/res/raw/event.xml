@@ -2,6 +2,8 @@
 
 <event>
     
+    <type>Inundação</type>
+    
     <city>João Pessoa</city>	    
 	
     <burghH>Mangabeira</burghH>
@@ -19,9 +21,19 @@
 	<foreseenEnd>10-09-2013,22-30</foreseenEnd>
 	
 	<riskArea>
-	    <point>-7.10,-34.10</point>
-	    <point>-7.30,-34.30</point>
-	    <point>-7.50,-34.50</point>
+	    <point>-7.184428,-34.848800</point>
+	    <point>-7.181308,-34.824553</point>
+	    <point>-7.199605,-34.829703</point>
+	    <point>-7.198254,-34.853392</point>
 	</riskArea>
+	
+	<evacuationPoints>
+	    <evpoint>-7.179360,-34.841869</evpoint>
+   	    <evpoint>-7.180765,-34.846998</evpoint>
+	    <evpoint>-7.178391,-34.836945</evpoint>
+	    <evpoint>-7.202244,-34.843891</evpoint>
+   	    <evpoint>-7.202755,-34.852131</evpoint>
+   	    <evpoint>-7.199264,-34.857281</evpoint>
+	</evacuationPoints>
 	
 </event>

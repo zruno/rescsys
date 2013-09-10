@@ -12,16 +12,28 @@
 	    android:orientation="vertical"
 	    android:layout_alignParentTop="true" >
 	 
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    android:background="#D6D6D6" >
+	    
+	   <ImageView 
+        android:src="@drawable/alert"
+        android:paddingLeft="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        />
+	    
 	    <TextView 
 	        android:id="@+id/home_label_event"
 	        android:paddingLeft="5dp"
-	        android:text="Alerta de enchente"
 	        android:textSize="20sp"
-	        android:background="#D6D6D6"
 	        android:gravity="center_vertical"
-	        android:layout_width="fill_parent"
+	        android:layout_width="wrap_content"
 	        android:layout_height="50sp"
 	        />
+	    </LinearLayout>
 	    
 	    <View
 			android:layout_width="fill_parent"
@@ -74,73 +86,73 @@
 	</LinearLayout>
 	    
 	<!-- Bottom Bar -->
-    <LinearLayout 
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_alignParentBottom="true"
-        android:background="#151515"
-        style="?android:attr/buttonBarStyle"
-        >
+<!--     <LinearLayout  -->
+<!--         android:orientation="horizontal" -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_gravity="bottom" -->
+<!--         android:layout_alignParentBottom="true" -->
+<!--         android:background="#151515" -->
+<!--         style="?android:attr/buttonBarStyle" -->
+<!--         > -->
        
-       <ImageButton
-           android:id="@+id/button_1"
-           style="?android:attr/buttonBarButtonStyle"
-           android:src="@drawable/phone"
-           android:layout_weight="1"
-           android:layout_height="match_parent"
-           android:layout_width="0dp"
-        />
+<!--        <ImageButton -->
+<!--            android:id="@+id/button_1" -->
+<!--            style="?android:attr/buttonBarButtonStyle" -->
+<!--            android:src="@drawable/phone" -->
+<!--            android:layout_weight="1" -->
+<!--            android:layout_height="match_parent" -->
+<!--            android:layout_width="0dp" -->
+<!--         /> -->
        
-       	<View
-			android:layout_width="0.2dp"
-			android:layout_height="50dp"
-			android:id="@+id/separatorh1"
-			android:visibility="visible"
-			android:background="@android:color/holo_blue_light"/>
+<!--        	<View -->
+<!-- 			android:layout_width="0.2dp" -->
+<!-- 			android:layout_height="50dp" -->
+<!-- 			android:id="@+id/separatorh1" -->
+<!-- 			android:visibility="visible" -->
+<!-- 			android:background="@android:color/holo_blue_light"/> -->
        
-       <ImageButton
-           style="?android:attr/buttonBarButtonStyle"
-           android:id="@+id/button_2"
-           android:src="@drawable/message"
-           android:layout_weight="1"
-           android:layout_height="match_parent"
-           android:layout_width="0dp"
-        />
+<!--        <ImageButton -->
+<!--            style="?android:attr/buttonBarButtonStyle" -->
+<!--            android:id="@+id/button_2" -->
+<!--            android:src="@drawable/message" -->
+<!--            android:layout_weight="1" -->
+<!--            android:layout_height="match_parent" -->
+<!--            android:layout_width="0dp" -->
+<!--         /> -->
        
-       	<View
-			android:layout_width="0.2dp"
-			android:layout_height="50dp"
-			android:id="@+id/separatorh2"
-			android:visibility="visible"
-			android:background="@android:color/holo_blue_light"/>
+<!--        	<View -->
+<!-- 			android:layout_width="0.2dp" -->
+<!-- 			android:layout_height="50dp" -->
+<!-- 			android:id="@+id/separatorh2" -->
+<!-- 			android:visibility="visible" -->
+<!-- 			android:background="@android:color/holo_blue_light"/> -->
        
-       <ImageButton
-           style="?android:attr/buttonBarButtonStyle"
-           android:id="@+id/button_3"
-           android:src="@drawable/share"
-           android:layout_weight="1"
-           android:layout_height="match_parent"
-           android:layout_width="0dp"
-        />
+<!--        <ImageButton -->
+<!--            style="?android:attr/buttonBarButtonStyle" -->
+<!--            android:id="@+id/button_3" -->
+<!--            android:src="@drawable/share" -->
+<!--            android:layout_weight="1" -->
+<!--            android:layout_height="match_parent" -->
+<!--            android:layout_width="0dp" -->
+<!--         /> -->
        
-    	<View
-			android:layout_width="0.2dp"
-			android:layout_height="50dp"
-			android:id="@+id/separatorh3"
-			android:visibility="visible"
-			android:background="@android:color/holo_blue_light"/>        
+<!--     	<View -->
+<!-- 			android:layout_width="0.2dp" -->
+<!-- 			android:layout_height="50dp" -->
+<!-- 			android:id="@+id/separatorh3" -->
+<!-- 			android:visibility="visible" -->
+<!-- 			android:background="@android:color/holo_blue_light"/>         -->
        
-       <ImageButton
-           style="?android:attr/buttonBarButtonStyle"
-           android:id="@+id/button_4"
-           android:src="@drawable/information"
-           android:layout_weight="1"
-           android:layout_height="match_parent"
-           android:layout_width="0dp"
-        />
+<!--        <ImageButton -->
+<!--            style="?android:attr/buttonBarButtonStyle" -->
+<!--            android:id="@+id/button_4" -->
+<!--            android:src="@drawable/information" -->
+<!--            android:layout_weight="1" -->
+<!--            android:layout_height="match_parent" -->
+<!--            android:layout_width="0dp" -->
+<!--         /> -->
         
-	</LinearLayout>
+<!-- 	</LinearLayout> -->
     
 </RelativeLayout>

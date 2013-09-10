@@ -126,7 +126,7 @@ public class ContentParser {
 		}
 		
 		ArrayList<LatLng> coords = new ArrayList<LatLng>();
-		NodeList ra = doc.getElementsByTagName("");
+		NodeList ra = doc.getElementsByTagName("point");
 		for (int i = 0; ra.getLength() > i; i++) {
 			Node point = ra.item(i);
 			
@@ -135,8 +135,23 @@ public class ContentParser {
 				
 				String pt = p.getTextContent();
 				String pts[] = pt.split(",");
-				LatLng coord = new LatLng(Integer.parseInt(pts[0]), Integer.parseInt(pts[1]));
+				LatLng coord = new LatLng(Double.parseDouble(pts[0]), Double.parseDouble(pts[1]));
 				coords.add(coord);
+			}
+		}
+		
+		ArrayList<LatLng> evac = new ArrayList<LatLng>();
+		NodeList ev = doc.getElementsByTagName("evpoint");
+		for (int i = 0; ev.getLength() > i; i++) {
+			Node n = ev.item(i);
+			
+			if (n.getNodeType() == Node.ELEMENT_NODE) {
+				Element e = (Element) n;
+				
+				String pt = e.getTextContent();
+				String pts[] = pt.split(",");
+				LatLng coord = new LatLng(Double.parseDouble(pts[0]), Double.parseDouble(pts[1]));
+				evac.add(coord);
 			}
 		}
 		
@@ -145,6 +160,13 @@ public class ContentParser {
 		String about = "";
 		if (ab.getNodeType() == Node.ELEMENT_NODE) {
 			about = ab.getTextContent();
+		}
+		
+		NodeList t = doc.getElementsByTagName("type");
+		Node type = t.item(0);
+		String name = "";
+		if (type.getNodeType() == Node.ELEMENT_NODE) {
+			name = type.getTextContent();
 		}
 		
 		NodeList s = doc.getElementsByTagName("start");
@@ -179,6 +201,7 @@ public class ContentParser {
 		}
 		Date alertE = formatDate(alert);
 		
+		event.setType(name);
 		event.setAbout(about);
 		event.setCities(cities);
 		event.setNeighboorhoodHigh(neighborH);
@@ -188,6 +211,7 @@ public class ContentParser {
 		event.setEventStart(startE);
 		event.setEventWatch(watchE);
 		event.setPoints(coords);
+		event.setEvpoints(evac);
 		
 		return event;
 	}

@@ -38,6 +38,9 @@ public class InstructionsFragment extends Fragment implements OnItemSelectedList
 		TextView eventInfo = (TextView) view.findViewById(R.id.home_event);
 		eventInfo.setText(event.toString());
 		
+		TextView tv = (TextView) view.findViewById(R.id.home_label_event);
+		tv.setText("Alerta de " +event.getType());
+		
 //		Spinner spinner = (Spinner) view.findViewById(R.id.events_spinner);
 //		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
 //				getActivity(), R.array.events_array, android.R.layout.simple_spinner_item);

@@ -19,9 +19,23 @@ public class DisasterEvent {
 	private String[] neighboorhoodHigh;
 	private String[] cities;
 	private String about;
+	private String type;
 	
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 	private ArrayList<LatLng> points;
+	private ArrayList<LatLng> evpoints;
 	
+	public ArrayList<LatLng> getEvpoints() {
+		return evpoints;
+	}
+	public void setEvpoints(ArrayList<LatLng> evpoints) {
+		this.evpoints = evpoints;
+	}
 	public Date getEventWatch() {
 		return eventWatch;
 	}

@@ -13,8 +13,11 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polygon;
+import com.google.android.gms.maps.model.PolygonOptions;
 import com.google.android.gms.maps.model.Polyline;
 import android.content.Context;
 import android.graphics.Color;
@@ -35,9 +38,19 @@ public class GMapFragment extends SupportMapFragment {
 	private MarkerOptions[] placesOptions;
 	private ArrayList<Facility> facilities;
 	private MapListener parentFragment;
+	private LatLng lastLatLng;
 	
+	public LatLng getLastLatLng() {
+		return lastLatLng;
+	}
+
+	public void setLastLatLng(LatLng lastLatLng) {
+		this.lastLatLng = lastLatLng;
+	}
+
 	private Polyline route;
 	private int routeColor;
+	private LatLngBounds llb;
 	
 	public Polyline getRoute() {
 		return route;
@@ -55,6 +68,12 @@ public class GMapFragment extends SupportMapFragment {
 		GMapFragment f =  new GMapFragment();
 		f.parentFragment = (MapListener) pf;
 		f.facilities = data;
+		return f;
+	}
+	
+	public static GMapFragment gMapInstance(Fragment pf) {
+		GMapFragment f =  new GMapFragment();
+		f.parentFragment = (MapListener) pf;
 		return f;
 	}
 	
@@ -119,10 +138,33 @@ public class GMapFragment extends SupportMapFragment {
         directionsTask.execute(url);
 	}
 	
+	public void evacuationRoute(LatLng ll) {
+		String url = getDirectionsUrl(lastLatLng, ll);
+        GetDirectionsTask directionsTask = new GetDirectionsTask(this);
+        // Start downloading json data from Google Directions API
+        directionsTask.execute(url);
+	}
+	
+	public void drawPolygon(ArrayList<LatLng> area) {
+		PolygonOptions polygOpt;
+		polygOpt = new PolygonOptions();
+		for (LatLng a: area) {
+			polygOpt.add(a);
+		}
+		polygOpt.fillColor(Color.argb(50, 255, 0, 0));
+		polygOpt.strokeWidth(3);
+		polygOpt.strokeColor(Color.argb(200, 255, 0, 0));
+		Polygon polygon = gmap.addPolygon(polygOpt);
+		llb = new LatLngBounds(area.get(3), area.get(1));
+	}
+	
+	public boolean atRiskArea() {
+		if (llb.contains(lastLatLng)) return true;
+		else return false;
+	}
+	
 	public void onCreate(Bundle savedInstanceState) {
-		
 		super.onCreate(savedInstanceState);
-		
 		setPlacesMarkers(new Marker[MAX_PLACES]);
 
 	}
@@ -135,14 +177,16 @@ public class GMapFragment extends SupportMapFragment {
 				getActivity().getSystemService(Context.LOCATION_SERVICE);
 		
 		gmap = getMap();
-		parentFragment.onMapReady();
 		
 		Location lastLoc = locMan.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 		
 		double lat = lastLoc.getLatitude();
 		double lng = lastLoc.getLongitude();
 				
-		LatLng lastLatLng = new LatLng(lat, lng);
+		lastLatLng = new LatLng(-7.187769, -34.840389);
+
+		parentFragment.onMapReady();
+		
 		userMarker = gmap.addMarker(new MarkerOptions()
 	    .position(lastLatLng)
 	    .title("Você está aqui")
